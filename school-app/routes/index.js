@@ -3,12 +3,10 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', (req, res, next) =>{
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'High-IQ' });
 });
 
-router.get('/login', (req, res)=>{
-  res.send("login");
-});
+
 
 router.get('/register', (req, res)=>{
   res.send("register");
