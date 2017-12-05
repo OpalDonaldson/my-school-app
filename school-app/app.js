@@ -7,11 +7,12 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var login = require('./routes/login');
-var login = require('./routes/login');
-var login = require('./routes/login');
-var login = require('./routes/login');
-var login = require('./routes/login');
-var login = require('./routes/login');
+var register = require('./routes/register');
+var dashboard = require('./routes/dashboard');
+var overview = require('./routes/overview');
+var datadetails = require('./routes/datadetails');
+var allactivities = require('./routes/allactivities');
+var resourcesarea = require('./routes/resourcesarea');
 
 var app = express();
 
@@ -29,6 +30,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use(login);
+app.use(register);
+app.use(dashboard);
+app.use(overview);
+app.use(datadetails);
+app.use(allactivities);
+app.use(resourcesarea);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
