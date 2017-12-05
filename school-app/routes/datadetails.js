@@ -19,6 +19,7 @@ var router = express.Router();
 
 
 router.get("/datadetails", (req, res)=>{
+  let mysql = db.query('SELECT * FROM ``')
   res.send("datadetails");
 })
 
