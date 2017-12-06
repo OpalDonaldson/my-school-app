@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-router.get("/resourcesarea", (req, res)=>{
-  res.send("resourcesarea")
-})
+router.get('/resourcearea', (req, res)=>{
+  res.render('resourcearea', { title: 'Resource Area'});
+});
 
 module.exports = router;

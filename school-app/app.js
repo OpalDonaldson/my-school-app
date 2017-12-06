@@ -13,7 +13,7 @@ var register = require('./routes/register');
 var dashboard = require('./routes/dashboard');
 var overview = require('./routes/overview');
 var datadetails = require('./routes/datadetails');
-var allactivities = require('./routes/allactivities');
+var allactivities = require('./routes/allactivity');
 var resourcesarea = require('./routes/resourcesarea');
 
 var app = express();
