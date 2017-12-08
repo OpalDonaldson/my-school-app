@@ -1,0 +1,19 @@
+*{
+  margin:0px;
+  padding:0px;
+}
+#head-nav{
+  background-image: url('../images/homepageimg.jpg');
+  background-repeat: no-repeat;
+  display: flex;
+  
+}
+#head-nav h1{
+    color: #fff;
+    background-color: rgb(57, 58, 57, 0.5);
+
+}
+#head-nav a{
+    color: #fff;
+    align-self: end;
+}
