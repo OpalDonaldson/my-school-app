@@ -2,18 +2,42 @@
   margin:0px;
   padding:0px;
 }
-#head-nav{
-  background-image: url('../images/homepageimg.jpg');
-  background-repeat: no-repeat;
+/* THis is the header and title area of the application */
+header{
+  background-color: #000;
   display: flex;
-  
+  color: #fff;
 }
-#head-nav h1{
-    color: #fff;
-    background-color: rgb(57, 58, 57, 0.5);
+
+#head-title{
+  flex: 6;
+  margin-left: 10px;
+}
+#head-title h1{
+  font-family: 'PT Mono';
+  text-align: center;
+}
+#login-register a{
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  padding: 9px;
+  flex: 1;
+}
+#login-register a:hover{
+  color:#55cde0;
+}
+#login-register{
+  padding-top: 6px;
+}
+body{
 
 }
-#head-nav a{
-    color: #fff;
-    align-self: end;
+body h3{
+  background-image: url('../images/homepageimg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align:center;
+  color: #fff;
+  padding: 2% 0 60% 0;
 }
