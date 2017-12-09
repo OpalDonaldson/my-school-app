@@ -5,12 +5,23 @@ html
     link(rel='stylesheet', href='/stylesheets/index.css')
     link(href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet")
   body
-    header
-      div(id='head-title')
-        h1 #{title}
-      div(id='login-register')
-        a(href='www.google.com') login
-        a(href='www.google.com') register
     main
-      h3 #{title} where all students performances are kept
-      p #{title} is designed to maintain data collected from schools. The #{title} app will be used to manage all students' examination grades in a seamless way and also allow parents and administrators the option of monitoring students' performance. #{title} also provides the option to present common data through chart representations. Additionally, for ease of access, we made it simple for users to download spreadsheets of Students' performance based on various customizable filters. This project will make school data more manageable for School Administrators, Principals, Teachers and Parents.
+      header
+        h1 #{title}
+        div(id='head-login')
+          a(href='/login') login
+          a(href='register') register
+      article(id='head-article')
+        h4 #{title} for all School Data Management.
+    article(id='main-content')
+      div(id='info1')
+        h4 head 1
+        p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+      div(id='info2')
+        h4 head 2
+        p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+      div(id='info3')
+        h4 head 3
+        p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+    footer
+      p Done by Ronique Ricketts

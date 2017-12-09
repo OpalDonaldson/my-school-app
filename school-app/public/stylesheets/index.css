@@ -3,41 +3,56 @@
   padding:0px;
 }
 /* THis is the header and title area of the application */
-header{
-  background-color: #000;
-  display: flex;
-  color: #fff;
-}
-
-#head-title{
-  flex: 6;
-  margin-left: 10px;
-}
-#head-title h1{
-  font-family: 'PT Mono';
-  text-align: center;
-}
-#login-register a{
-  text-decoration: none;
-  font-size: 20px;
-  color: #fff;
-  padding: 9px;
-  flex: 1;
-}
-#login-register a:hover{
-  color:#55cde0;
-}
-#login-register{
-  padding-top: 6px;
-}
-body{
-
-}
-body h3{
+main{
   background-image: url('../images/homepageimg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  text-align:center;
+}
+header{
+  display: flex;
+}
+header h1{
+  text-align: center;
+  flex-grow: 6;
   color: #fff;
-  padding: 2% 0 60% 0;
+  background-color: #000;
+}
+#head-login{
+  padding-top: 10px;
+}
+header a{
+  background-color: #000;
+  text-decoration: none;
+  color: #fff;
+  padding: 9px 5px;
+}
+header a:hover{
+  color: #1962aa;
+}
+#head-article h4{
+  text-align: center;
+  padding-top: 20px;
+  color: #fff;
+  height:800px;
+}
+#main-content{
+  display: flex;
+  justify-content: space-between;
+}
+#main-content h4{
+  font-size: 20px;
+  text-align: center;
+  background-color: #2b2c2d;
+  color: #fff;
+  margin: 20px;
+}
+#main-content p{
+  margin: 20px;
+}
+footer{
+  margin-top: 10px;
+  padding: 10px;
+  text-align: center;
+  background-color: #000;
+  color:#fff;
 }
