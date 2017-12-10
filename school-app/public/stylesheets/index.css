@@ -12,16 +12,20 @@ header{
   display: flex;
 }
 header h1{
+  padding: 10px;
+  font-family: Ubuntu;
   text-align: center;
   flex-grow: 6;
   color: #fff;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 #head-login{
-  padding-top: 10px;
+  background-color: #000;
+}
+#head-login {
+  padding: 20px 10px;
 }
 header a{
-  background-color: #000;
   text-decoration: none;
   color: #fff;
   padding: 9px 5px;
@@ -30,6 +34,8 @@ header a:hover{
   color: #1962aa;
 }
 #head-article h4{
+  font-family: monospace;
+  font-size: 20px;
   text-align: center;
   padding-top: 20px;
   color: #fff;
@@ -38,16 +44,18 @@ header a:hover{
 #main-content{
   display: flex;
   justify-content: space-between;
+  text-align:center;
+  margin: 50px 0 0 0;
 }
 #main-content h4{
   font-size: 20px;
-  text-align: center;
   background-color: #2b2c2d;
   color: #fff;
   margin: 20px;
 }
 #main-content p{
   margin: 20px;
+  text-align:left;
 }
 footer{
   margin-top: 10px;
