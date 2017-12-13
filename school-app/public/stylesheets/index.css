@@ -7,7 +7,7 @@ main{
   background-image: url('../images/homepageimg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 500px;
+  height: 350px;
 }
 header{
   display: flex;
