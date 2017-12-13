@@ -5,16 +5,20 @@ html
     link(rel='stylesheet', href='/stylesheets/login.css')
     script(src="https://use.fontawesome.com/cb1b821ad2.js")
   body
-    h1
-      a(href='/' class='fa fa-home')  Home
+    header
+      a(href='/' class='fa fa-home' id='home') home
+      h1
+        a(href='/login')  Login
     article
       h4 Home for all school data and tables
-      p Login to access #{appName} Data.
       div(id='userlogin')
-        i(class='fa fa-user')
-        form(id='loginForm')
-          label(name='email')
+        div(id='icon')
+          i(class='fa fa-users fa-2x')
+        form(id='loginForm' method='post' action='/loginUser')
+          label(for='email' name='email' required='true') Email
           input(id='email' type='text' placeholder='username@domain.com')
-          label(name='password')
+          label(name='password' required='true') Password
           input(id='password' type='password')
-          input(type='submit')
+          div(class='button-row')
+            button(type='submit') Submit
+          a(href='/reset' id='forget') Reset Password
