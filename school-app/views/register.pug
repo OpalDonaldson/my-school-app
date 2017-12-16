@@ -1,7 +1,13 @@
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+  title= title
+  link(rel='stylesheet', href='/stylesheets/register.css')
+  script(src="https://use.fontawesome.com/cb1b821ad2.js")
   body
-    h1 #{title}
+    header
+      a(class='fa fa-home' href='/') Home
+      h1 #{title}
+      a(class='fa fa-sign-in' href='/login') Login
+    article
+      form(id='register' method='put' action='/registeruser')
