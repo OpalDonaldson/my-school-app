@@ -10,4 +10,34 @@ html
       h1 #{title}
       a(class='fa fa-sign-in' href='/login') Login
     article
-      form(id='register' method='put' action='/registeruser')
+      h3(id='') Enter the
+      form(id='register' method='post' action='/registerusers')
+        div
+          label(for='fname') Firstname
+          input(type='text' id='fname')
+        div
+          label(for='lname') Lastname
+          input(type='text' id='lname')
+        div
+          label(for='email') Email
+          input(type='email' placeholder='name@school.com')
+        div
+          label(for='telephone') Telephone
+          input(id='telephone' type='text')
+        div
+          label(for='schoolname') Schoolname
+          input(type='text' id='schoolname')
+        div
+          label(for='schooladdress') School Address
+          input(type='text')
+        div
+          label(for='schoolnumber') School Tel.
+          input(id='schoolnumber' type='text' pattern='[0-9]{3}[ -][0-9]{3}[ -][0-9]{4')
+        div
+          label(for='password') Password
+          input(type='password' id='password')
+        div
+          label(for='verifypassword') Re-enter Password
+          input(type='password' id='verifypassword')
+        div
+          input(type='submit' id='submit')
