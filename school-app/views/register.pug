@@ -14,30 +14,33 @@ html
       form(id='register' method='post' action='/registerusers')
         div
           label(for='fname') Firstname
-          input(type='text' id='fname')
+          input(type='text' id='fname' name='fname')
         div
           label(for='lname') Lastname
-          input(type='text' id='lname')
+          input(type='text' id='lname' name='lname')
         div
           label(for='email') Email
-          input(type='email' placeholder='name@school.com')
+          input(type='email' name='email' placeholder='name@school.com')
         div
           label(for='telephone') Telephone
-          input(id='telephone' type='text')
+          input(id='telephone' type='text' name='telephone')
         div
           label(for='schoolname') Schoolname
-          input(type='text' id='schoolname')
+          input(type='text' id='schoolname' name='schoolname')
         div
           label(for='schooladdress') School Address
-          input(type='text')
+          input(type='text' name='schooladdress')
         div
-          label(for='schoolnumber') School Tel.
-          input(id='schoolnumber' type='text' pattern='[0-9]{3}[ -][0-9]{3}[ -][0-9]{4')
+          label(for='schooltel') School Tel.
+          input(id='schooltel' type='text' pattern='[0-9]{3}[ -][0-9]{3}[ -][0-9]{4' name='schooltel')
+        div
+          
         div
           label(for='password') Password
-          input(type='password' id='password')
+          input(type='password' id='password' name='password')
         div
           label(for='verifypassword') Re-enter Password
-          input(type='password' id='verifypassword')
+          input(type='password' id='verifypassword' name='verifypassword')
         div
-          input(type='submit' id='submit')
+          input(type='submit' id='submit' onclick='regSubmit')
+    script(src='../public/javascripts/register.js')
