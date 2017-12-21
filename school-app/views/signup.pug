@@ -34,11 +34,17 @@ html
           label(for='schooltel') School Tel.
           input(id='schooltel' type='text' pattern='[0-9]{3}[ -][0-9]{3}[ -][0-9]{4' name='schooltel' required)
         div
+          label(for='accounttype') Account Type
+          select(name='accounttype')
+            option(name='administrator') Administrator
+            option(name='teacher') Teacher
+            option(name='parent') Parent
+        div
           label(for='password') Password
-          input(type='password' id='password' name='password' required)
+          input(type='password' id='password' name='password' pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Password must match and be at least 6 Characters long.' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" required)
         div
           label(for='verifypassword') Re-enter Password
-          input(type='password' id='verifypassword' name='verifypassword' required)
+          input(type='password' id='verifypassword' name='verifypassword' onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" required)
         div
-          input(type='submit' id='submit' onclick='regSubmit')
-    script(src='../public/javascripts/register.js')
+          input(type='submit' id='submit')
+    script(src='../public/javascripts/signup.js')
