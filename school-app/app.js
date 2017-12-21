@@ -9,7 +9,7 @@ var mysql = require('mysql');
 
 var index = require('./routes/index');
 var login = require('./routes/login');
-var register = require('./routes/register');
+var register = require('./routes/signup');
 var dashboard = require('./routes/dashboard');
 var overview = require('./routes/overview');
 var datadetails = require('./routes/datadetails');
