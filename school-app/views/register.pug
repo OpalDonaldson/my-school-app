@@ -14,33 +14,31 @@ html
       form(id='register' method='post' action='/registerusers')
         div
           label(for='fname') Firstname
-          input(type='text' id='fname' name='fname')
+          input(type='text' id='fname' name='fname' required)
         div
           label(for='lname') Lastname
-          input(type='text' id='lname' name='lname')
+          input(type='text' id='lname' name='lname' required)
         div
           label(for='email') Email
-          input(type='email' name='email' placeholder='name@school.com')
+          input(type='email' name='email' placeholder='name@school.com' required)
         div
           label(for='telephone') Telephone
-          input(id='telephone' type='text' name='telephone')
+          input(id='telephone' type='text' name='telephone' required)
         div
           label(for='schoolname') Schoolname
-          input(type='text' id='schoolname' name='schoolname')
+          input(type='text' id='schoolname' name='schoolname' required)
         div
           label(for='schooladdress') School Address
-          input(type='text' name='schooladdress')
+          input(type='text' name='schooladdress' required)
         div
           label(for='schooltel') School Tel.
-          input(id='schooltel' type='text' pattern='[0-9]{3}[ -][0-9]{3}[ -][0-9]{4' name='schooltel')
-        div
-          
+          input(id='schooltel' type='text' pattern='[0-9]{3}[ -][0-9]{3}[ -][0-9]{4' name='schooltel' required)
         div
           label(for='password') Password
-          input(type='password' id='password' name='password')
+          input(type='password' id='password' name='password' required)
         div
           label(for='verifypassword') Re-enter Password
-          input(type='password' id='verifypassword' name='verifypassword')
+          input(type='password' id='verifypassword' name='verifypassword' required)
         div
           input(type='submit' id='submit' onclick='regSubmit')
     script(src='../public/javascripts/register.js')
