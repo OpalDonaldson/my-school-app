@@ -10,7 +10,7 @@ html
       h1 #{title}
       a(class='fa fa-sign-in' href='/login') Login
     article
-      h3(id='') Enter the
+      h3(id='warning') #{warning}
       form(id='register' method='post' action='/signup')
         div
           label(for='fname') Firstname
@@ -22,8 +22,8 @@ html
           label(for='email') Email
           input(type='email' name='email' placeholder='name@school.com' required)
         div
-          label(for='telephone') Telephone
-          input(id='telephone' type='text' name='telephone' required)
+          label(for='telephonenum') Telephone
+          input(id='telephonenum' type='text' name='telephonenum' required)
         div
           label(for='schoolname') Schoolname
           input(type='text' id='schoolname' name='schoolname' required)
@@ -41,10 +41,10 @@ html
             option(name='parent') Parent
         div
           label(for='password') Password
-          input(type='password' id='password' name='password' pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Password must match and be at least 6 Characters long.' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" required)
+          input(type='password' id='password' name='password' required)
         div
           label(for='verifypassword') Re-enter Password
-          input(type='password' id='verifypassword' name='verifypassword' onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" required)
+          input(type='password' id='verifypassword' name='verifypassword' required)
         div
           input(type='submit' id='submit')
     script(src='../public/javascripts/signup.js')
