@@ -33,18 +33,19 @@ router.post('/signup', (req, res)=>{
                 console.log("Insert Error = ", error);
               }
               else{
-                res.render('signup', { warning: "This School Name or email address is already in use."});
+                res.render('login', { warning: "New user added please login."});
               }
             });
         }
       })
     }
     else{
+      res.render('login', {message: 'User already Exist just login.'});
       console.log('This already exist', result);
     }
 
   })
-  res.send(req.body);
+
 })
 
 

@@ -9,9 +9,11 @@ html
       a(href='/' class='fa fa-home' id='home') Home
       h1
         a(href='/login')  Login
+      a(href='/signup' id='signup' class='fa fa-pencil-square-o')  Signup
     article
       h4 School CMS
       div(id='userlogin')
+        h5 #{message}
         div(id='icon')
           i(class='fa fa-users fa-2x')
         form(id='loginForm' method='post' action='/loginUser')

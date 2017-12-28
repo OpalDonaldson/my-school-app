@@ -2,7 +2,7 @@ doctype html
 html
   head
   title= title
-  link(rel='stylesheet', href='/stylesheets/register.css')
+  link(rel='stylesheet', href='/stylesheets/signup.css')
   script(src="https://use.fontawesome.com/cb1b821ad2.js")
   body
     header
@@ -13,7 +13,7 @@ html
       h3(id='warning') #{warning}
       form(id='register' method='post' action='/signup')
         div
-          label(for='fname') Firstname
+          label(for='fname') Firstname 
           input(type='text' id='fname' name='fname' required)
         div
           label(for='lname') Lastname
