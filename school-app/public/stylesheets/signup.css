@@ -19,17 +19,44 @@ header h1{
   padding-bottom: 2px;
 }
 body{
-  background-color: rgba(0,0,0, 0.1);
-}
-article{
-  margin: 0 10%;
   text-align: center;
 }
-form div{
-  margin: 10px;
-  display: flex;
+#regform{
+  margin: 0 40%;
 }
-form div label{
-  grid-column: 1;
-  grid-row: 2 / 2;
+form{
+  margin: auto;
+  text-align: center;
+  background-color: rgba(46,64,84, 0.9);
+  color: #fff;
+  padding: 20px;
+}
+div{
+  margin: 5px;
+  display: grid;
+  grid-template-columns: 120px 200px;
+  grid-column-rows: 20px;
+  align-items: center;
+}
+div label{
+  padding-top: 3px;
+  font-size: 18px;
+}
+div input{
+  height: 20px;
+}
+div select{
+  height: 20px;
+}
+#submit{
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #fff;
+  border-radius: 2px;
+  height: 40px;
+  width: 80px;
+  padding: 5px;
+  color: #2e4054;
+
+  margin-bottom: 20px;
 }
