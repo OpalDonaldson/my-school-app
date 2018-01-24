@@ -3,5 +3,9 @@
   padding:0px;
 }
 header{
-  background-color: 
+  background-color: #2e4054;
+}
+header a{
+  color: #fff;
+  text-decoration: none;
 }
