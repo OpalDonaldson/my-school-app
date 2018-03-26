@@ -37,24 +37,44 @@ class MessageForm extends Component {
     }
   }
 
-  handleSubmit(event){
-
+  handleSubmit(){
+    postData("localhost:8080/submitMessage", this.state)
+    .then(data => console.log(data))
+    .catch(error => console.error(error))
+    function postData(url, data){
+      return fetch(url,{
+        body: JSON.stringify(data),
+        cache: "no-cache",
+        credentials: 'same-origin',
+        headers: {
+          'user-agent': 'Mozilla/4.0 MDN Example',
+          'content-type': 'application/json'
+        },
+        method: 'POST',
+        mode: 'cors',
+        redirect: 'follow',
+        referrer: 'no-referrer',
+      })
+      .then(response => response.json())
+    }
   }
 
   render(){
     return(
       <form onSubmit={this.handleSubmit}>
-        <label> Name:
-          <input id="name" onChange={this.handleChange} value={this.state.name}/>
+        <label htmlFor="name"> Name:
+          <input required id="name" onChange={this.handleChange} value={this.state.name}/>
         </label>
-        <label> Email:
-          <input id="email" onChange={this.handleChange} value={this.state.email}/>
+        <label htmlFor="email"> Email:
+          <input type="email" required id="email"
+          pattern="[a-zA-Z0-9!#$%&amp;'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*"
+          onChange={this.handleChange} value={this.state.email}/>
         </label>
-        <label> Subject:
-          <input id="subject" onChange={this.handleChange} value={this.state.subject}/>
+        <label htmlFor="subject"> Subject:
+          <input required id="subject" onChange={this.handleChange} value={this.state.subject}/>
         </label>
-        <label> Message:
-          <textarea id="message" onChange={this.handleChange} value={this.state.message}/>
+        <label htmlFor="message"> Message:
+          <textarea required id="message" onChange={this.handleChange} value={this.state.message}/>
         </label>
         <input type="submit" value="Submit"/>
       </form>

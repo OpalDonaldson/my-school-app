@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res)=> {
-  console.log("success");
+app.post('/submitMessage', (req, res)=> {
+  console.log("success post");
   res.send('Hello School');
 });
 
