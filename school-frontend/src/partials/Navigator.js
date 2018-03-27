@@ -4,7 +4,7 @@ class Navigator extends Component {
 
   render(){
     return(
-      <nav>
+      <nav id="main-nav-bar">
         <h4>{this.props.header}</h4>
         <ul>
           <li>Home</li>

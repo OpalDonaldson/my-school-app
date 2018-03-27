@@ -53,7 +53,6 @@ class MessageForm extends Component {
   	).catch((e)=>
   		e
   	);
-    e.preventDefault();
   }
 
   render(){

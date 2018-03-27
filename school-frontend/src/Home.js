@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Navigator from "./partials/Navigator";
 import MessageForm from "./partials/MessageForm";
-
+import "./css/home.css";
 class Home extends Component {
 
   render(){
@@ -9,7 +9,7 @@ class Home extends Component {
       <main>
         <Navigator header='School App'/>
         <div>
-          <span></span>
+          <span><i class="fas fa-book"></i></span>
           <h1>App Name</h1>
           <p>The tagline will be here.</p>
         </div>
