@@ -37,31 +37,28 @@ class MessageForm extends Component {
     }
   }
 
-  handleSubmit(){
-    postData("localhost:8080/submitMessage", this.state)
-    .then(data => console.log(data))
-    .catch(error => console.error(error))
-    function postData(url, data){
-      return fetch(url,{
-        body: JSON.stringify(data),
-        cache: "no-cache",
-        credentials: 'same-origin',
-        headers: {
-          'user-agent': 'Mozilla/4.0 MDN Example',
-          'content-type': 'application/json'
-        },
-        method: 'POST',
-        mode: 'cors',
-        redirect: 'follow',
-        referrer: 'no-referrer',
-      })
-      .then(response => response.json())
-    }
+  handleSubmit(e){
+
+    const testURL = 'http://localhost:8080/messageMe';
+	  const myInit = {
+    	method: 'POST',
+    };
+
+	  const myRequest = new Request(testURL, myInit);
+
+  	fetch(myRequest).then((response) =>
+  		response
+  	).then((response) =>
+  		response
+  	).catch((e)=>
+  		e
+  	);
+    e.preventDefault();
   }
 
   render(){
     return(
-      <form onSubmit={this.handleSubmit}>
+      <form id="myMessageForm" onSubmit={this.handleSubmit}>
         <label htmlFor="name"> Name:
           <input required id="name" onChange={this.handleChange} value={this.state.name}/>
         </label>

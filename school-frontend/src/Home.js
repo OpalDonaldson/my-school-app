@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navigator from "./partials/Navigator";
 import MessageForm from "./partials/MessageForm";
+
 class Home extends Component {
 
   render(){
