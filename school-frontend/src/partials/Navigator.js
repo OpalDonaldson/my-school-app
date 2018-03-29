@@ -6,14 +6,15 @@ class Navigator extends Component {
     return(
       <nav id="main-nav-bar">
         <h4>{this.props.header}</h4>
-        <ul>
-          <li>Home</li>
-          <li>Dashboard</li>
-          <li>Login</li>
-          <li>Logout</li>
+        <ul id="home-dashboard">
+          <a href="/"><li>Home</li></a>
+          <a href="#"><li>Dashboard</li></a>
+        </ul>
+        <ul id="log-info">
+          <a href="#"><li><i class="fas fa-sign-in-alt"></i> Sign-in</li></a>
+          <a href="#"><li><i class="fas fa-sign-out-alt"></i> Sign-out</li></a>
         </ul>
       </nav>
-
     )
   }
 }

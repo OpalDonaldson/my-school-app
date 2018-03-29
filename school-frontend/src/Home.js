@@ -8,8 +8,8 @@ class Home extends Component {
     return(
       <main>
         <Navigator header='School App'/>
-        <div>
-          <span><i class="fas fa-book"></i></span>
+        <div id="app-name">
+          <span><i class="fas fa-certificate fa-5x"></i></span>
           <h1>App Name</h1>
           <p>The tagline will be here.</p>
         </div>

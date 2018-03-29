@@ -35,7 +35,7 @@ class MessageForm extends Component {
         message : event.target.value
       })
     }
-  }
+  } 
 
   handleSubmit(e){
 
