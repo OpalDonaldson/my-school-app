@@ -35,7 +35,7 @@ class MessageForm extends Component {
         message : event.target.value
       })
     }
-  } 
+  }
 
   handleSubmit(e){
 
@@ -72,7 +72,7 @@ class MessageForm extends Component {
         <label htmlFor="message"> Message:
           <textarea required id="message" onChange={this.handleChange} value={this.state.message}/>
         </label>
-        <input type="submit" value="Submit"/>
+        <input id="submit" type="submit" value="Submit"/>
       </form>
     );
   }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navigator from "./partials/Navigator";
 import MessageForm from "./partials/MessageForm";
 import "./css/home.css";
+
 class Home extends Component {
 
   render(){
@@ -9,43 +10,45 @@ class Home extends Component {
       <main>
         <Navigator header='School App'/>
         <div id="app-name">
-          <span><i class="fas fa-certificate fa-5x"></i></span>
-          <h1>App Name</h1>
-          <p>The tagline will be here.</p>
+          <span><i class="fas fa-graduation-cap fa-5x"></i></span>
+          <h1>APP NAME</h1>
+          <p>THE TAGLINE WILL BE HERE.</p>
         </div>
-        <article>
-          <h2>Services</h2>
-          <div>
-              <div>
-                <span>Organizer</span>
-                <h3>icon1</h3>
+        <article id="services-div">
+          <h2 id="service-head">Services</h2>
+          <div id="services-list">
+              <div class="service-items">
+                <h3>Organizer</h3>
+                <span><i class="fas fa-briefcase fa-5x"></i></span>
                 <p>Lorem ipsum information!</p>
               </div>
-              <div>
-                <span>Concise</span>
-                <h3>icon2</h3>
-                <p>Lorem ipsum information!</p>
+              <div class="service-items">
+                <h3>Concise</h3>
+                <span><i class="fas fa-chart-pie fa-5x"></i></span>
+                <p>Lorem ipsum information! I am a paragraph. Click on me.</p>
               </div>
-              <div>
-                <span>Reliable</span>
-                <h3>icon3</h3>
+              <div class="service-items">
+                <h3>Reliable</h3>
+                <span><i class="fas fa-handshake fa-5x"></i></span>
                 <p>Lorem ipsum information!</p>
               </div>
           </div>
         </article>
-        <article>
-          <h3>ABOUT US</h3>
+        <article  id="about-us">
+          <h2>ABOUT US</h2>
           <p>I am a paragraph. Click on me.</p>
         </article>
-        <article>
-          <h3>FIND US</h3>
-          <div>
-            <h4>ADDRESS</h4>
-            <p>Lot 806 Tobago Ave., Cornwall Courts, Tobago Ave. St. James</p>
-            <h4>OPENING HOURS:</h4>
-            <p>Mon - Fri: 9am - 6pm</p>
+        <article id="find-us">
+          <h2>FIND US</h2>
+          <div id="address-form">
+            <div id="address">
+              <h4>ADDRESS</h4>
+              <p>Lot 806 Tobago Ave., Cornwall Courts, Tobago Ave. St. James</p>
+              <h4>OPENING HOURS:</h4>
+              <p>Mon - Fri: 9am - 6pm</p>
+            </div>
+            <MessageForm />
           </div>
-          <MessageForm />
         </article>
       </main>
     )

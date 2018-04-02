@@ -7,33 +7,143 @@ body{
   color: #fff;
 }
 #main-nav-bar{
+  position:fixed;
   display: inline-flex;
   background-color: #000;
   width: 100%;
 }
 #main-nav-bar h4{
   flex: 1;
-  padding: 10px;
+  padding: 7px;
   font-size: 30px;
 }
 #home-dashboard{
   flex: 1;
 }
+#main-nav-bar ul{
+  margin: 0;
+  padding:0;
+}
 #main-nav-bar ul li{
   font-size: 20px;
   padding: 20px;
 }
+#main-nav-bar ul li:hover{
+  background-color: grey;
+  text-decoration: none;
+  color: #fff;
+}
 #main-nav-bar ul{
   display: inline-flex;
 }
-#main-nav-bar a{
+#main-nav-bar ul a{
   list-style: none;
+  color: #fff;
+}
+#main-nav-bar ul a:hover{
+  text-decoration: none;
+  background-color: #fff;
+  color: #000;
 }
 #app-name{
-  background-image: url("/image/home.jpg");
+  background-image: url('../image/home.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   text-align: center;
   margin: auto;
-
+  padding: 200px 0 350px 0;
+}
+#app-name span{
+  border-width: 5px;
+  border-radius: 50%;
+}
+#app-name h1{
+  font-size: 50px;
+}
+#app-name p{
+  font-size: 20px;
+}
+#services-div{
+  background-image: url('../image/gradient-two.jpg');
+  background-color: grey;
+  background-size: cover;
+  margin: auto;
+  padding: 100px 0 300px 0;
+}
+#services-list{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+#service-head{
+  margin-bottom: 50px;
+}
+.service-items{
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 5px;
+  padding: 0 0 50px 0;
+  margin: 20px;
+  width: 300px;
+}
+.service-items h3{
+  background-color: #000;
+  margin: 0 0 20px 0;
+  padding: 10px 0;
+  font-weight: lighter;
+  font-size: 25px;
+}
+.service-items span{
+  padding-top: 10px;
+}
+.service-items p{
+  padding-top: 10px;
+}
+article h2{
+  text-align: center;
+}
+#about-us{
+  background-image: url('../image/gradient.jpg');
+  margin-top: -20px;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 100px 0 300px 0;
+  text-align: center;
+}
+#find-us{
+  text-align: center;
+}
+#address-form{
+  display: flex;
+  justify-content: center;
+}
+#myMessageForm{
+  justify-content: center;
+  width: 230px;
+}
+#myMessageForm label{
+padding: 5px;
+}
+#myMessageForm input{
+  margin: 10px;
+  width: 100%;
+}
+#myMessageForm textarea{
+  margin: 10px;
+  width: 100%;
+}
+#address{
+  width: 300px;
+  text-align: left;
+  padding: 10px;
+  margin: 10px;
+}
+#submit{
+  font-weight: bold;
+  border-radius: 5px;
+  color: #000;
+  width: 80px !important;
+  height: 40px;
 }
 @media(min-width: 576px){
 
