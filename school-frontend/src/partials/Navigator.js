@@ -7,12 +7,12 @@ class Navigator extends Component {
       <nav id="main-nav-bar">
         <h4>{this.props.header}</h4>
         <ul id="home-dashboard">
-          <a href="/"><li>Home</li></a>
-          <a><li>Dashboard</li></a>
+          <a id="home" href="/"><li>Home</li></a>
+          <a id="dashboard" href="/"><li>Dashboard</li></a>
         </ul>
         <ul id="log-info">
-          <a><li><i class="fas fa-sign-in-alt"></i> Sign-in</li></a>
-          <a><li><i class="fas fa-sign-out-alt"></i> Sign-out</li></a>
+          <a id="/signin" href="/signin"><li><i class="fas fa-sign-in-alt"></i> Sign-in</li></a>
+          <a id="/signup" href="/signup"><li><i class="fas fa-sign-out-alt"></i> Sign-out</li></a>
         </ul>
       </nav>
     )

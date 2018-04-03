@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import Navigator from "./partials/Navigator";
-
-class Signup extends Component {
+import Navigator from './partials/Navigator';
+class Signin extends Component {
 
 
   render(){
     return(
       <main>
-        <Navigator />
+        <Navigator header="Signin"/>
         <p>Here is the text about the about us page</p>
       </main>
     )
   }
 }
 
-export default Signup;
+export default Signin;
