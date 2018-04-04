@@ -7,7 +7,7 @@ class Signup extends Component {
   render(){
     return(
       <main>
-        <Navigator />
+        <Navigator header="Sign up"/>
         <p>Here is the text about the about us page</p>
       </main>
     )

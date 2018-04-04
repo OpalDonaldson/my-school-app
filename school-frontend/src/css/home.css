@@ -128,10 +128,12 @@ text-align: left;
 #myMessageForm input{
   margin: 10px;
   width: 100%;
+  color: black;
 }
 #myMessageForm textarea{
   margin: 10px;
   width: 100%;
+  color: black;
 }
 #address{
   width: 300px;

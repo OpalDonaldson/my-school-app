@@ -12,7 +12,7 @@ class Navigator extends Component {
         </ul>
         <ul id="log-info">
           <a id="/signin" href="/signin"><li><i class="fas fa-sign-in-alt"></i> Sign-in</li></a>
-          <a id="/signup" href="/signup"><li><i class="fas fa-sign-out-alt"></i> Sign-out</li></a>
+          <a id="/signup" href="/signup"><li><i class="fas fa-user-plus"></i> Sign-up</li></a>
         </ul>
       </nav>
     )

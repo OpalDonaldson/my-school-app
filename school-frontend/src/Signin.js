@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import Navigator from './partials/Navigator';
-class Signin extends Component {
+import  "./css/signin.css";
 
+class Signin extends Component {
 
   render(){
     return(
       <main>
-        <Navigator header="Signin"/>
-        <p>Here is the text about the about us page</p>
+        <Navigator header="Sign in" />
+        <article id="sign-in">
+          <p>Here</p>
+
+        </article>
       </main>
     )
   }
