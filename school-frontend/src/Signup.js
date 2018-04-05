@@ -8,7 +8,11 @@ class Signup extends Component {
     return(
       <main>
         <Navigator header="Sign up"/>
-        <p>Here is the text about the about us page</p>
+        <article>
+          <form>
+                        
+          </form>
+        </article>
       </main>
     )
   }

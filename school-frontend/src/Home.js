@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Navigator from "./partials/Navigator";
 import MessageForm from "./partials/MessageForm";
+import Footer from "./partials/Footer"
+
 import "./css/home.css";
 
 class Home extends Component {
@@ -10,26 +12,26 @@ class Home extends Component {
       <main>
         <Navigator header='School App'/>
         <div id="app-name">
-          <span><i class="fas fa-graduation-cap fa-5x"></i></span>
+          <span><i className="fas fa-graduation-cap fa-5x"></i></span>
           <h1>APP NAME</h1>
           <p>THE TAGLINE WILL BE HERE.</p>
         </div>
         <article id="services-div">
           <h2 id="service-head">Services</h2>
           <div id="services-list">
-              <div class="service-items">
+              <div className="service-items">
                 <h3>Organizer</h3>
-                <span><i class="fas fa-briefcase fa-5x"></i></span>
+                <span><i className="fas fa-briefcase fa-5x"></i></span>
                 <p>Lorem ipsum information!</p>
               </div>
-              <div class="service-items">
+              <div className="service-items">
                 <h3>Concise</h3>
-                <span><i class="fas fa-chart-pie fa-5x"></i></span>
+                <span><i className="fas fa-chart-pie fa-5x"></i></span>
                 <p>Lorem ipsum information! I am a paragraph. Click on me.</p>
               </div>
-              <div class="service-items">
+              <div className="service-items">
                 <h3>Reliable</h3>
-                <span><i class="fas fa-handshake fa-5x"></i></span>
+                <span><i className="fas fa-handshake fa-5x"></i></span>
                 <p>Lorem ipsum information!</p>
               </div>
           </div>
@@ -50,6 +52,7 @@ class Home extends Component {
             <MessageForm />
           </div>
         </article>
+        <Footer footer="APP NAME" />
       </main>
     )
   }
