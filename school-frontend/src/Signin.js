@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navigator from './partials/Navigator';
+import Footer from './partials/Footer';
 import  "./css/signin.css";
 
 class Signin extends Component {
@@ -48,28 +49,31 @@ class Signin extends Component {
     return(
       <main>
         <Navigator header="Sign in" />
-        <article id="sign-in">
-          <h3>Log in to you School App account.</h3>
-          <form>
-            <div id="email-password">
-              <label>Username
-              <input id="email" type="email" placeholder="name@example.com"
-              required
-              pattern="[a-zA-Z0-9!#$%&amp;'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*"
-              value={this.state.email} onChange={this.handleChange}/>
-              </label>
-              <label>Password
-              <input id="password" type="password" />
-              </label>
-            </div>
-            <input value="Submit" type="submit" />
-          </form>
-          <a>Forgot Password</a>
-          <a href="/signup">Sign up</a>
+        <article id="sign-article">
+          <div id="sigin-in-div">
+            <h3 id="login-head">Log in to you School App account.</h3>
+            <form>
+              <p>Log in</p>
+              <div id="email-password">
+                <label>Username
+                <input id="email" type="email" placeholder="name@example.com"
+                required
+                pattern="[a-zA-Z0-9!#$%&amp;'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*"
+                value={this.state.email} onChange={this.handleChange}/>
+                </label>
+                <label>Password
+                <input id="password" type="password" onChange={this.handleChange} value={this.state.password}/>
+                </label>
+              </div>
+              <input id="submit" value="Submit" type="submit" />
+            </form>
+          </div>
         </article>
+        <Footer />
       </main>
     )
   }
 }
-
+/*<a>Forgot Password</a>
+<a href="/signup">Sign up</a>*/
 export default Signin;

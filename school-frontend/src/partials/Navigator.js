@@ -11,8 +11,8 @@ class Navigator extends Component {
           <a id="dashboard" href="/"><li>Dashboard</li></a>
         </ul>
         <ul id="log-info">
-          <a id="/signin" href="/signin"><li><i className="fas fa-sign-in-alt"></i> Sign-in</li></a>
-          <a id="/signup" href="/signup"><li><i className="fas fa-user-plus"></i> Sign-up</li></a>
+          <a id="/signin" href="/signin"><li><i className="fas fa-sign-in-alt"></i></li></a>
+          <a id="/signup" href="/signup"><li><i className="fas fa-user-plus"></i></li></a>
         </ul>
       </nav>
     )

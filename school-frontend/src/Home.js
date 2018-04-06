@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Navigator from "./partials/Navigator";
-import MessageForm from "./partials/MessageForm";
-import Footer from "./partials/Footer"
+import Navigator from './partials/Navigator';
+import MessageForm from './partials/MessageForm';
+import Footer from './partials/Footer';
 
 import "./css/home.css";
 
