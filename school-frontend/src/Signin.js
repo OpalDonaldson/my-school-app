@@ -52,17 +52,17 @@ class Signin extends Component {
         <article id="sign-article">
           <div id="sigin-in-div">
             <h3 id="login-head">Log in to you School App account.</h3>
-            <form>
+            <form id="sigin-in-form">
               <p>Log in</p>
               <div id="email-password">
                 <label>Username
-                <input id="email" type="email" placeholder="name@example.com"
-                required
-                pattern="[a-zA-Z0-9!#$%&amp;'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*"
-                value={this.state.email} onChange={this.handleChange}/>
+                  <input id="email" type="email" placeholder="name@example.com"
+                  required
+                  pattern="[a-zA-Z0-9!#$%&amp;'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*"
+                  value={this.state.email} onChange={this.handleChange}/>
                 </label>
                 <label>Password
-                <input id="password" type="password" onChange={this.handleChange} value={this.state.password}/>
+                  <input id="password" type="password" onChange={this.handleChange} value={this.state.password}/>
                 </label>
               </div>
               <input id="submit" value="Submit" type="submit" />

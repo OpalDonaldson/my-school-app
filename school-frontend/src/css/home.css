@@ -124,18 +124,22 @@ article h2{
   justify-content: center;  width: 200px;
 }
 #myMessageForm label{
-padding: 5px 0;
-text-align: left;
+  width: 100%;
+  height: 40px;
+  margin: 10px 0;
+  text-align: left;
 }
 #myMessageForm input{
   margin: 10px;
   width: 100%;
   color: black;
+  font-family: "IBM Plex Mono";
 }
 #myMessageForm textarea{
   margin: 10px;
   width: 100%;
   color: black;
+  font-family: "IBM Plex Mono";
 }
 #address{
   width: 300px;
@@ -149,6 +153,7 @@ text-align: left;
   color: #000;
   width: 80px !important;
   align-items: center !important;
+  font-family: "IBM Plex Mono";
 }
 footer{
   text-align: center;

@@ -10,7 +10,9 @@ class Signup extends Component {
         <Navigator header="Sign up"/>
         <article>
           <form>
-                        
+            <label>Firstname
+              <input />
+            </label>
           </form>
         </article>
       </main>
