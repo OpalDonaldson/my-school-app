@@ -66,10 +66,12 @@ class Signin extends Component {
                 </label>
               </div>
               <input id="submit" value="Submit" type="submit" />
+              <br />
+              <a href="/resetpassword">Forget password</a>
             </form>
           </div>
         </article>
-        <Footer />
+        <Footer footer="APP NAME" />
       </main>
     )
   }

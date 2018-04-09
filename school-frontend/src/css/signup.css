@@ -1,0 +1,45 @@
+#main-register{
+  margin: 0;
+  padding: 0;
+  background-image: url('../image/gradient-two.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+#register-article{
+  margin: 68px 0;
+}
+#register-article h3{
+  text-align: center;
+  padding: 20px 0;
+}
+#register-form{
+  margin: auto;
+  width: 500px;
+  padding: 40px;
+  border-style: ridge;
+  border-width: 5px;
+  border-color: #007985;
+  background-color: #00A1B2;
+}
+#register-form input{
+  width: 100%;
+  color: black;
+  padding: 5px 0 5px 12px;
+  border: 2px solid black;
+  border-radius: 15px;
+}
+#register-form label{
+  margin: 15px 0;
+  width: 100%;
+}
+#register-form #avatar{
+  border: 0 !important;
+}
+#submit{
+  padding:5px !important;
+  color: #000;
+}
+legend{
+  text-align: center;
+}
