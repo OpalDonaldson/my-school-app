@@ -17,7 +17,7 @@ main{
   height: 50%;
   margin: auto;
   display: flex;
-  background-color: rgba(92,132,98, 0.8);
+  background-color: rgba(92,132,98, 0.9);
   color: #fff;
 }
 #login-head{
@@ -25,6 +25,7 @@ main{
   font-size: 20px;
 }
 #sigin-in-form{
+  width: 500px;
   color: #000;
   padding: 0px 30px;
   background-color: #fff;
@@ -34,18 +35,18 @@ form p{
   font-size: 20px;
 }
 #sigin-in-form input{
-  margin: 5px 0;
-  padding-left: 5px 0 5px 5px;
+  width: 100%;
+  padding: 5px 0 5px 12px;
   font-family: "IBM Plex Mono";
   border: 2px solid black;
   border-radius: 15px;
 }
 #sigin-in-form label{
-  margin: 15px 0;
+  margin: 10px 0;
   width: 100%;
 }
 #sigin-in-form #submit{
-  padding: 5px;
+  margin: 8px 0;
 }
 
 @media(min-width: 576px){

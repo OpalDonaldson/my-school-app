@@ -119,12 +119,12 @@ article h2{
   display: flex;
   width: 600px;
   margin: auto;
+  padding: 0 0 20px 0;
 }
 #address-form #address{
   width: 500px;
 }
 #myMessageForm{
-  border-style: ridge;
   width: 300px;
 }
 #myMessageForm label{
@@ -139,8 +139,9 @@ article h2{
   width: 100%;
   font-family: "IBM Plex Mono";
 }
-input:focus{
-
+input:focus,
+textarea:focus{
+  outline: none;
 }
 #myMessageForm textarea{
   width: 100%;

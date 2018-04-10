@@ -13,6 +13,11 @@ app.get('/messageMe', (req, res)=>{
   res.send("Hello Success!");
 });
 
+app.post('/register', (req, res)=>{
+  let date = new Date();
+  console.log("GET Request:"+ date.toString());
+  res.send("Success");
+});
 app.listen(8080, ()=>{
   console.log('Express is running on port 8080!');
 })
