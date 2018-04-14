@@ -56,7 +56,7 @@ class Signin extends Component {
               <p>Log in</p>
               <div id="email-password">
                 <label>Username
-                  <input id="email" type="email" placeholder="name@example.com"
+                  <input id="email" type="email" placeholder="name@domain.com"
                   required
                   pattern="[a-zA-Z0-9!#$%&amp;'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*"
                   value={this.state.email} onChange={this.handleChange}/>
