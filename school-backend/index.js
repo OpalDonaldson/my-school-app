@@ -1,7 +1,7 @@
 const express = require('express');
 require('dotenv').config();
 const app = express();
-let ipAdd = "127.0.0.1"
+
 app.post('/messageMe', (req, res)=> {
   let date = new Date()
   console.log("POST Request:"+ date.toString())
@@ -19,6 +19,6 @@ app.post('/register', (req, res)=>{
   console.log("GET Request:"+ date.toString());
   res.send("Success");
 });
-app.listen(8080, ipAdd, ()=>{
+app.listen(process.env.PORT, process.env.HOSTNAME, ()=>{
   console.log('Express is running on port 8080!');
 })
