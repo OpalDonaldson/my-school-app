@@ -9,9 +9,14 @@ app.use(cors());
 app.use(bodyParser.urlencoded({
   extended: false
 }))
+app.post('/tester', (req,res)=>{
+  console.log("Test was successful");
+  res.send({"Success": true});
+})
+const Dashboard = require('./routes/dashboard.js');
+const Users = require('./routes/users.js')
 
-const Dashboard = require("./routes/dashboard.js");
-
+app.use('/users',Users)
 app.use('/dashboard', Dashboard);
 
 

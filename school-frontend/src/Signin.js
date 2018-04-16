@@ -27,11 +27,11 @@ class Signin extends Component {
     }
 
   }
-  handleSubmit(e){
-    e.preventDefault();
-    const testURL = 'http://localhost:8080/login';
+  handleSubmit(){
+    const testURL = 'http://localhost:8080/users/login';
 	  const myInit = {
-    	method: 'POST',
+    	method: 'post',
+      body: JSON.stringify(this.state)
     };
 
 	  const myRequest = new Request(testURL, myInit);
@@ -39,11 +39,10 @@ class Signin extends Component {
   	fetch(myRequest).then((response) =>
   		response
   	).then((response) =>
-    response
+  		response
   	).catch((e)=>
   		e
   	);
-
   }
   render(){
     return(
@@ -52,7 +51,7 @@ class Signin extends Component {
         <article id="sign-article">
           <div id="sigin-in-div">
             <h3 id="login-head">Log in to you School App account.</h3>
-            <form id="sigin-in-form">
+            <form onSubmit={this.handleSubmit} id="sigin-in-form">
               <p>Log in</p>
               <div id="email-password">
                 <label>Username

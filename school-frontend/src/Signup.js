@@ -76,7 +76,7 @@ class Signup extends Component {
     })
   }
   handleSubmit(){
-    const testURL = 'http://localhost:8080/register';
+    const testURL = 'http://localhost:8080/users/signup';
 	  const myInit = {
     	method: 'post',
       body: JSON.stringify(this.state)
