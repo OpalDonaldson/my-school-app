@@ -30,16 +30,16 @@ class Signin extends Component {
   handleSubmit(){
     const url = 'http://localhost:8080/users/signin';
     fetch(url, {
-      method: 'post',
+      method: 'POST',
       headers: {
-        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+        'Content-type': 'application/json; charset=UTF-8'
       },
-      body: `email=${this.state.email}&password=${this.state.password}`
+      body: JSON.stringify(this.state)
     })
-    .then(function (data) {
-      console.log('Request succeeded with JSON response', data);
+    .then((data) =>{
+      console.log(data)
     })
-    .catch(function (error) {
+    .then(error => {
       console.log('Request failed', error);
     });
   }

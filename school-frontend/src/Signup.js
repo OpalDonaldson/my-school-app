@@ -75,28 +75,19 @@ class Signup extends Component {
       avatar: event.target.files[0]
     })
   }
-  handleSubmit(){
+  handleSubmit(e){
     const url = 'http://localhost:8080/users/signup';
     fetch(url, {
-      method: 'post',
+      method: 'POST',
       headers: {
-        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+        'Content-type': 'application/json; charset=UTF-8'
       },
-      body: `firstname=${this.state.firstname}
-             &lastname=${this.state.lastname}
-             &email=${this.state.email}
-             &telephone=${this.state.telephone}
-             &avatar=${this.state.avatar}
-             &schoolname=${this.state.schoolname}
-             &street=${this.state.street}
-             &city=${this.state.city}
-             &country=${this.state.country}
-             &password=${this.state.password}`
+      body: JSON.stringify(this.state)
     })
-    .then(function (data) {
-      console.log('Request succeeded with JSON response', data);
+    .then((data) =>{
+      console.log(data)
     })
-    .catch(function (error) {
+    .then(error => {
       console.log('Request failed', error);
     });
   }
@@ -123,7 +114,7 @@ class Signup extends Component {
                 <input id="telephone" type="telephone" placeholder="000 000 0000" value={this.state.telephone} onChange={this.handleChange} />
               </label>
               <label>School logo
-                <input id="avatar" type="file" onChange={this.handleFileSelected} />
+                <input id="avatar" type="file" onChange={this.handleFileSelected} imgextension={['.jpg', '.gif', '.png', '.gif']} />
               </label>
               <label>School Name
                 <input id="schoolname" type="text" placeholder="School Name" value={this.state.schoolname} onChange={this.handleChange} required />

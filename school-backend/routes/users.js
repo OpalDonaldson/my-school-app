@@ -9,19 +9,11 @@ users.use(cors());
 
 
 users.post('/signup', (req, res)=>{
-  let today = new Date();
-  let appData = {
-    'error': 1,
-    'data': ''
-  };
-  let userData = {
-    'firstname': req.body.firstname
-  }
-  console.log(userData);
+  console.log(req.body);
+  res.send("success")
 });
 
 users.post("/signin", (req, res)=>{
-  token = "Success token";
   console.log(req.body);
   res.send("login");
 });
