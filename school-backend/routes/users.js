@@ -1,19 +1,29 @@
 const express = require('express');
-const user = express.Router();
+const users = express.Router();
 const db = require('../database/database');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 
-user.post("/login", (req, res)=>{
-  console.log(req.body)
-  console.log("Logged in");
+let token;
+users.use(cors());
+
+
+users.post('/signup', (req, res)=>{
+  let today = new Date();
+  let appData = {
+    'error': 1,
+    'data': ''
+  };
+  let userData = {
+    'firstname': req.body.firstname
+  }
+  console.log(userData);
+});
+
+users.post("/signin", (req, res)=>{
+  token = "Success token";
+  console.log(req.body);
   res.send("login");
 });
 
-user.post('/signup', (req, res)=>{
-  console.log("registered");
-  res.send("registered");
-});
-
-
-module.exports = user;
+module.exports = users;

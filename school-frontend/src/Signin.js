@@ -28,21 +28,20 @@ class Signin extends Component {
 
   }
   handleSubmit(){
-    const testURL = 'http://localhost:8080/users/login';
-	  const myInit = {
-    	method: 'post',
-      body: JSON.stringify(this.state)
-    };
-
-	  const myRequest = new Request(testURL, myInit);
-
-  	fetch(myRequest).then((response) =>
-  		response
-  	).then((response) =>
-  		response
-  	).catch((e)=>
-  		e
-  	);
+    const url = 'http://localhost:8080/users/signin';
+    fetch(url, {
+      method: 'post',
+      headers: {
+        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+      },
+      body: `email=${this.state.email}&password=${this.state.password}`
+    })
+    .then(function (data) {
+      console.log('Request succeeded with JSON response', data);
+    })
+    .catch(function (error) {
+      console.log('Request failed', error);
+    });
   }
   render(){
     return(

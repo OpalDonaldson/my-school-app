@@ -76,21 +76,29 @@ class Signup extends Component {
     })
   }
   handleSubmit(){
-    const testURL = 'http://localhost:8080/users/signup';
-	  const myInit = {
-    	method: 'post',
-      body: JSON.stringify(this.state)
-    };
-
-	  const myRequest = new Request(testURL, myInit);
-
-  	fetch(myRequest).then((response) =>
-  		response
-  	).then((response) =>
-  		response
-  	).catch((e)=>
-  		e
-  	);
+    const url = 'http://localhost:8080/users/signup';
+    fetch(url, {
+      method: 'post',
+      headers: {
+        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+      },
+      body: `firstname=${this.state.firstname}
+             &lastname=${this.state.lastname}
+             &email=${this.state.email}
+             &telephone=${this.state.telephone}
+             &avatar=${this.state.avatar}
+             &schoolname=${this.state.schoolname}
+             &street=${this.state.street}
+             &city=${this.state.city}
+             &country=${this.state.country}
+             &password=${this.state.password}`
+    })
+    .then(function (data) {
+      console.log('Request succeeded with JSON response', data);
+    })
+    .catch(function (error) {
+      console.log('Request failed', error);
+    });
   }
   render(){
     return(
