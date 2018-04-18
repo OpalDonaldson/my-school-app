@@ -7,7 +7,6 @@ const jwt = require('jsonwebtoken');
 let token;
 users.use(cors());
 
-
 users.post('/signup', (req, res)=>{
   console.log(req.body);
   res.send("success")

@@ -75,7 +75,7 @@ class Signup extends Component {
       avatar: event.target.files[0]
     })
   }
-  handleSubmit(e){
+  handleSubmit(){
     const url = 'http://localhost:8080/users/signup';
     fetch(url, {
       method: 'POST',
