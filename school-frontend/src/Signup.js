@@ -12,7 +12,6 @@ class Signup extends Component {
       lastname: "",
       email: "",
       telephone: "",
-      avatar: null,
       schoolname: "",
       street: "",
       city: "",
@@ -21,7 +20,6 @@ class Signup extends Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleFileSelected = this.handleFileSelected.bind(this);
   }
   handleChange(event){
     if(event.target.id === "firstname"){
@@ -70,11 +68,6 @@ class Signup extends Component {
       });
     }
   }
-  handleFileSelected(event){
-    this.setState({
-      avatar: event.target.files[0]
-    })
-  }
   handleSubmit(){
     const url = 'http://localhost:8080/users/signup';
     fetch(url, {
@@ -112,9 +105,6 @@ class Signup extends Component {
               </label>
               <label>Telephone
                 <input id="telephone" type="telephone" placeholder="000 000 0000" value={this.state.telephone} onChange={this.handleChange} />
-              </label>
-              <label>School logo
-                <input id="avatar" type="file" onChange={this.handleFileSelected} imgextension={['.jpg', '.gif', '.png', '.gif']} />
               </label>
               <label>School Name
                 <input id="schoolname" type="text" placeholder="School Name" value={this.state.schoolname} onChange={this.handleChange} required />

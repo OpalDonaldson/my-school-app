@@ -7,6 +7,10 @@ const jwt = require('jsonwebtoken');
 let token;
 users.use(cors());
 
+users.get('/pop', (req, res)=>{
+  res.send("Dashboard");
+})
+
 users.post('/signup', (req, res)=>{
   console.log(req.body);
   res.send("success")

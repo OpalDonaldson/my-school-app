@@ -34,9 +34,7 @@
   margin: 8px 0;
   width: 100%;
 }
-#register-form #avatar{
-  border: 0 !important;
-}
+
 #submit{
   padding:5px !important;
   color: #000;
