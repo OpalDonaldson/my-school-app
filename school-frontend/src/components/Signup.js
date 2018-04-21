@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Navigator from "./partials/Navigator";
-import Footer from "./partials/Footer";
-import "./css/signup.css";
+import Navigator from "../partials/Navigator";
+import Footer from "../partials/Footer";
+import "../css/signup.css";
 
 class Signup extends Component {
   constructor(props){
@@ -11,6 +11,7 @@ class Signup extends Component {
       firstname: "",
       lastname: "",
       email: "",
+      avatar: null,
       telephone: "",
       schoolname: "",
       street: "",
@@ -20,7 +21,12 @@ class Signup extends Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleFileSelected = this.handleFileSelected.bind(this);
   }
+  handleFileSelected(event){
+   const avatar = event.target.files[0];
+   this.setState(()=>({avatar}));
+ }
   handleChange(event){
     if(event.target.id === "firstname"){
       this.setState({
@@ -69,13 +75,15 @@ class Signup extends Component {
     }
   }
   handleSubmit(){
+    let data = new FormData();
+    data.append('userInfo', this.state);
+    data.append('avatar', this.state.avatar);
+
+    console.log(data);
     const url = 'http://localhost:8080/users/signup';
     fetch(url, {
       method: 'POST',
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8'
-      },
-      body: JSON.stringify(this.state)
+      body: data
     })
     .then((data) =>{
       console.log(data)
@@ -102,6 +110,9 @@ class Signup extends Component {
                 <input id="email" type="email"
                 pattern="[a-zA-Z0-9!#$%&amp;'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*"
                 placeholder="name@domain.com" value={this.state.email} onChange={this.handleChange} required/>
+              </label>
+              <label>
+                <input id="avatar" onChange={this.handleFileSelected} type="file"/>
               </label>
               <label>Telephone
                 <input id="telephone" type="telephone" placeholder="000 000 0000" value={this.state.telephone} onChange={this.handleChange} />

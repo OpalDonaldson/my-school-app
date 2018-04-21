@@ -8,7 +8,7 @@ class Navigator extends Component {
         <h4>{this.props.header}</h4>
         <ul id="home-dashboard">
           <a id="home" href="/"><li>Home</li></a>
-          <a id="dashboard" href="/"><li>Dashboard</li></a>
+          <a id="dashboard" href="/dashboard"><li>Dashboard</li></a>
         </ul>
         <ul id="log-info">
           <a id="/signin" href="/signin"><li><i className="fas fa-sign-in-alt"></i></li></a>

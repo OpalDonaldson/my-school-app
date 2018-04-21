@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Navigator from './partials/Navigator';
-import Footer from './partials/Footer';
-import  "./css/signin.css";
+import Navigator from '../partials/Navigator';
+import Footer from '../partials/Footer';
+import  "../css/signin.css";
 
 class Signin extends Component {
   constructor(props){

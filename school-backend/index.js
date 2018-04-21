@@ -17,6 +17,6 @@ app.use('/users',Users)
 app.use('/dashboard', Dashboard);
 
 
-app.listen(8080, process.env.HOSTNAME, ()=>{
+app.listen(8080, "127.0.0.1", ()=>{
   console.log('Express is running on port 8080!');
 })

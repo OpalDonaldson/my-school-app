@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navigator from "./partials/Navigator";
+import Navigator from "../partials/Navigator";
 
 class Forgetpassword extends Component {
 

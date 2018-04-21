@@ -1,17 +1,49 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Home from "./Home";
-import Signin from "./Signin";
-import Signup from "./Signup";
-import Resetpassword from "./Resetpassword"
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import Home from './components/Home';
+import Signin from './components/Signin';
+import Signup from './components/Signup';
+import Resetpassword from './components/Resetpassword';
+import Dashboard from './components/Dashboard';
+
+const checkAuth = () =>{
+  let token = localStorage.getItem('token');
+  if(token){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={props =>
+      checkAuth() ? (
+        <Component {...props} />
+      ) : (
+        <Redirect
+          to={{
+            pathname: "/login",
+            state: { from: props.location }
+          }}
+        />
+      )
+    }
+  />
+);
 
 const App = () => (
   <Router>
     <div>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/signin" component={Signin} />
-      <Route exact path="/signup" component={Signup} />
-      <Route exact path="/resetpassword" component={Resetpassword} />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/signin" component={Signin} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/resetpassword" component={Resetpassword} />
+        <PrivateRoute path="/dashboard" component={Dashboard} />
+      </Switch>
     </div>
   </Router>
 );
