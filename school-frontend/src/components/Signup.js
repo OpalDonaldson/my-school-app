@@ -28,14 +28,24 @@ class Signup extends Component {
    this.setState(()=>({avatar}));
  }
   handleChange(event){
+    function titleCase(str) {
+      let splitString = str.split(" ");
+      let newStr = [];
+      splitString.forEach((word)=>{
+        let firstLetter = word.slice(0, 1).toUpperCase();
+        let ending = word.slice(1).toLowerCase();
+        newStr.push(firstLetter + ending);
+      });
+      return newStr.join(" ");
+    }
     if(event.target.id === "firstname"){
       this.setState({
-        firstname: event.target.value
+        firstname: titleCase(event.target.value)
       });
     }
     else if(event.target.id === "lastname"){
       this.setState({
-        lastname: event.target.value
+        lastname: titleCase(event.target.value)
       });
     }
     else if(event.target.id === "email"){
@@ -50,22 +60,22 @@ class Signup extends Component {
     }
     else if(event.target.id === "schoolname"){
       this.setState({
-        schoolname: event.target.value
+        schoolname: titleCase(event.target.value)
       });
     }
     else if(event.target.id === "street"){
       this.setState({
-        street: event.target.value
+        street: titleCase(event.target.value)
       });
     }
     else if(event.target.id === "city"){
       this.setState({
-        city: event.target.value
+        city: titleCase(event.target.value)
       });
     }
     else if(event.target.id === "country"){
       this.setState({
-        country: event.target.value
+        country: titleCase(event.target.value)
       });
     }
     else if(event.target.id === "password"){
@@ -76,7 +86,8 @@ class Signup extends Component {
   }
   handleSubmit(){
     let data = new FormData();
-    data.append("userInfo",this.state.email)
+    let userData = JSON.stringify(this.state);
+    data.append("userInfo", userData);
     data.append('avatar', this.state.avatar);
 
     console.log(data);
