@@ -76,7 +76,7 @@ class Signup extends Component {
   }
   handleSubmit(){
     let data = new FormData();
-    data.append('userInfo', this.state);
+    data.append("userInfo",this.state.email)
     data.append('avatar', this.state.avatar);
 
     console.log(data);

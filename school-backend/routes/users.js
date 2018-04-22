@@ -12,9 +12,8 @@ let token;
 users.use(cors());
 
 users.post('/signup', upload.single('avatar'), (req, res)=>{
-  console.log(req.file);
-  console.log(file.body);
-  res.send('Success');
+  console.log(`The file ${req.file} the body ${req.body.userInfo}`);
+  res.send('Successful post');
 });
 
 users.post("/signin", (req, res)=>{
