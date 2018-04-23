@@ -12,9 +12,20 @@ let token;
 users.use(cors());
 
 users.post('/signup', upload.single('avatar'), (req, res)=>{
-  console.log(req.body);
-  console.log(req.file);
-  res.send('Successful post');
+  const userInfo = JSON.parse(req.body.userInfo);
+  delete userInfo.avatar;
+  const today = new Date();
+  userInfo.created = today.toLocaleString();
+  const appData = {
+    'error': 1,
+    'data': ''
+  }
+  db.getConnection((err, connection)=>{
+    if(err){
+      console.log(`This is the error ${err}`);
+    }
+    console.log(connection);
+  })
 });
 
 users.post("/signin", (req, res)=>{
