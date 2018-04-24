@@ -36,7 +36,6 @@ users.post('/signup', upload.single('avatar'), (req, res)=>{
           appData['error'] = 0;
           appData['data'] = 'User registered successfully!';
           console.log(rows);
-          console.log(fields)
           res.status(201).json(appData)
         }
         else{
