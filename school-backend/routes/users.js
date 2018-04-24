@@ -18,36 +18,45 @@ users.post('/signup', upload.single('avatar'), (req, res)=>{
   delete userInfo.avatar;
   const today = new Date();
   userInfo.created = today.toLocaleString();
+
   const appData = {
     'error': 1,
     'data': ''
   }
-  console.log(db)
-  /*
-  db.connect();
-  db.query('SELECT * FROM `admin_users` WHERE `firstname` = ?',['Test'],(error, results, fields)=>{
-    if(error){
-      console.log(error);
+  db.getConnection((err, connection)=>{
+    if(err){
+      appData['error'] = 1;
+      appData['data'] = 'Internal Server Error';
+      res.status(500).json(appData);
     }
     else{
-      console.log(results);
-      console.log(fields);
+      userInfo.password = encryptPassword(userInfo.password)
+      connection.query('INSERT INTO `admin_users` SET ?', userInfo, (err, rows, fields)=>{
+        if(!err){
+          appData['error'] = 0;
+          appData['data'] = 'User registered successfully!';
+          console.log(rows);
+          console.log(fields)
+          res.status(201).json(appData)
+        }
+        else{
+          appData['data'] = 'Error Occured!';
+          console.log('There was an error '+err);
+          res.status(400).json(appData);
+        }
+      });
+      connection.release();
     }
   })
-  db.end();
-  */
+  console.log(userInfo)
 });
 
 users.post("/signin", (req, res)=>{
-  db.query('SELECT * FROM `admin_users` WHERE `firstname` = ?', ['Test'],(err, results, fields)=>{
-    if(err){
-      console.log(err)
-    }
-    else{
-      console.log(results)
-      console.log(fields);
-    }
-  });
+  console.log(req.body.email)
 });
 
+function encryptPassword(password){
+  const hash = bcrypt.hashSync(password, saltRounds);
+  return hash;
+}
 module.exports = users;
