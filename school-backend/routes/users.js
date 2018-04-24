@@ -22,21 +22,32 @@ users.post('/signup', upload.single('avatar'), (req, res)=>{
     'error': 1,
     'data': ''
   }
-  console.log("success 1");
-  db.getConnection((err, connection)=>{
-    if(err){
-      console.log(err);
+  console.log(db)
+  /*
+  db.connect();
+  db.query('SELECT * FROM `admin_users` WHERE `firstname` = ?',['Test'],(error, results, fields)=>{
+    if(error){
+      console.log(error);
     }
     else{
-      console.log("success 2 ");
+      console.log(results);
+      console.log(fields);
     }
   })
-  console.log("success 3");
+  db.end();
+  */
 });
 
 users.post("/signin", (req, res)=>{
-  console.log(req.body);
-  res.send("login");
+  db.query('SELECT * FROM `admin_users` WHERE `firstname` = ?', ['Test'],(err, results, fields)=>{
+    if(err){
+      console.log(err)
+    }
+    else{
+      console.log(results)
+      console.log(fields);
+    }
+  });
 });
 
 module.exports = users;
