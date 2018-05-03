@@ -1,15 +1,18 @@
 const express = require('express');
 const cors = require('cors');
+const passport = require('passport');
 const bodyParser = require('body-parser');
 
 require('dotenv').config({path: './local.env'});
 const app = express();
 
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cors());
-app.use(bodyParser.urlencoded({
-  extended: false
-}))
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(express.json());
 
 const Dashboard = require('./routes/dashboard.js');
