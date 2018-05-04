@@ -1,6 +1,14 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/users');
+const db = mongoose.connection;
 
+db.on('error', (err)=>{
+  console.log('Connection error:', err);
+})
+
+db.once('open', ()=>{
+  console.log("Successful connection");
+})
 
 const Schema = mongoose.Schema;
 ObjectId = Schema.ObjectId;
@@ -17,7 +25,5 @@ const User = new Schema({
   password: String,
   date: String
 });
-
-console.log(mongoose.connection)
 
 module.exports = mongoose;
