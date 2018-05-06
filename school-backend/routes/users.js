@@ -1,6 +1,6 @@
 const express = require('express');
 const users = express.Router();
-const db = require('../database/mongodatabase.js');
+const User = require('../database/mongodatabase.js');
 const cors = require('cors');
 
 const bcrypt = require('bcrypt');
@@ -19,8 +19,13 @@ users.post('/signup', upload.single('avatar'), (req, res)=>{
   const today = new Date();
   userInfo.created = today.toLocaleString();
 
-
-  console.log(userInfo)
+  const adminUser = new User(userInfo);
+  adminUser.save((err)=>{
+    if(err){
+      console.log(err)
+    }
+    console.log(userInfo.email + ' was added Successfully!');
+  })
 });
 
 users.post("/signin", (req, res)=>{

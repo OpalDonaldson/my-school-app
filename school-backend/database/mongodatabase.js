@@ -1,29 +1,30 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/users');
-const db = mongoose.connection;
-
-db.on('error', (err)=>{
-  console.log('Connection error:', err);
-})
-
-db.once('open', ()=>{
-  console.log("Successful connection");
-})
 
 const Schema = mongoose.Schema;
-ObjectId = Schema.ObjectId;
 
-const User = new Schema({
-  id: ObjectId,
+const userSchema  = new Schema({
+  //userId: Schema.ObjectId,
   firstname: String,
   lastname: String,
-  email: String,
-  avatar: Object,
+  email: {
+    type: String,
+    lowercase: true,
+    index: true,
+    unique: true
+  },
+  avatar:Schema.Types.Mixed,
   telephone: String,
+  schoolname: {
+    type: String,
+    index: true,
+    unique: true
+  },
   city: String,
   country: String,
   password: String,
   date: String
 });
+const User = mongoose.model('User', userSchema);
 
-module.exports = mongoose;
+module.exports = User;
