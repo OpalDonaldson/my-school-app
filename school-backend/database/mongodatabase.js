@@ -4,7 +4,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/users');
 const Schema = mongoose.Schema;
 
 const userSchema  = new Schema({
-  //userId: Schema.ObjectId,
+  userId: Schema.ObjectId,
   firstname: String,
   lastname: String,
   email: {

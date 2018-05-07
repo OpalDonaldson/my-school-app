@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt');
 
 const multer = require("multer");
 const storage = multer.memoryStorage();
-const upload = multer({storage});
+const upload = multer({dest: '../public/uploads/'});
 
 const saltRounds = 10;
 let token;
@@ -22,14 +22,17 @@ users.post('/signup', upload.single('avatar'), (req, res)=>{
   const adminUser = new User(userInfo);
   adminUser.save((err)=>{
     if(err){
+      res.send('Error Occured')
       console.log(err)
     }
-    console.log(userInfo.email + ' was added Successfully!');
+    console.log(userInfo.schoolname+ ' was added Successfully!');
   })
+  res.send("Successful")  
 });
 
 users.post("/signin", (req, res)=>{
-  console.log(req.body)
+  let query = User.findOne({ email: req.body.email })
+  console.log(req.body.email);
 });
 
 function encryptPassword(password){
