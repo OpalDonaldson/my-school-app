@@ -15,6 +15,7 @@ app.use(passport.session());
 
 app.use(express.json());
 
+app.use('/', express.static(__dirname + '/public'));
 const Dashboard = require('./routes/dashboard.js');
 const Users = require('./routes/users.js')
 

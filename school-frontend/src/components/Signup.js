@@ -123,7 +123,7 @@ class Signup extends Component {
                 placeholder="name@domain.com" value={this.state.email} onChange={this.handleChange} required/>
               </label>
               <label>
-                <input id="avatar" accept='image/x-png, image/gif, image/jpeg' onChange={this.handleFileSelected} type="file"/>
+                <input name='avatar' id="avatar" accept='image/x-png, image/gif, image/jpeg' onChange={this.handleFileSelected} type="file"/>
               </label>
               <label>Telephone
                 <input id="telephone" type="telephone" placeholder="000 000 0000" value={this.state.telephone} onChange={this.handleChange} />
