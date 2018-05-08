@@ -13,10 +13,12 @@ const multerConfig = {
       next(null, './public')
     },
     filename: (req, file, next)=>{
+      const userInfo = JSON.parse(req.body.userInfo);
       const ext = file.mimetype.split('/')[1];
-      next(null, file.fieldname + '-' + Date.now() + '.'+ext)      
+      
+      next(null, userInfo.schoolname + '.'+ext)      
     }
-  }),
+  })
 };
 
 const saltRounds = 10;
