@@ -16,7 +16,7 @@ const multerConfig = {
       const userInfo = JSON.parse(req.body.userInfo);
       const ext = file.mimetype.split('/')[1];
       
-      next(null, userInfo.schoolname + '.'+ext)      
+      next(null, userInfo.schoolname + '.'+ext)  
     }
   })
 };
@@ -26,7 +26,7 @@ let token;
 users.use(cors());
 
 users.post('/signup', multer(multerConfig).single('avatar'), (req, res)=>{
-  const userInfo = JSON.parse(req.body.userInfo);
+  const userInfo = jsonParser(req.body.userInfo);
   userInfo.avatar = req.file;
   const today = new Date();
   userInfo.created = today.toLocaleString();
@@ -34,19 +34,22 @@ users.post('/signup', multer(multerConfig).single('avatar'), (req, res)=>{
   const adminUser = new User(userInfo);
   adminUser.save((err)=>{
     if(err){
-      res.send('Error Occured')
-      console.log(err)
-    }
-    console.log(userInfo.schoolname+ ' was added Successfully!');
+      console.log(err[BulkWriteError])
+    }else{
+      console.log(userInfo.schoolname+ ' was added Successfully!');
+    }    
   })
-  console.log(userInfo);
   res.send("Successful")
 });
 
 users.post("/signin", (req, res)=>{
-  let query = User.findOne({ email: req.body.email })
   console.log(req.body);
+  let query = User.findOne({ email: req.body.email })
 });
+
+function jsonParser(toBeParsed){
+  return JSON.parse(toBeParsed);
+}
 
 function encryptPassword(password){
   const hash = bcrypt.hashSync(password, saltRounds);
