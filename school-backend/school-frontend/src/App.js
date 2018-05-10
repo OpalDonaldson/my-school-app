@@ -5,6 +5,7 @@ import Signin from './components/Signin';
 import Signup from './components/Signup';
 import Resetpassword from './components/Resetpassword';
 import Dashboard from './components/Dashboard';
+import Filenotfound from './components/Filenotfound';
 
 const checkAuth = () =>{
   let token = localStorage.getItem('token');
@@ -25,7 +26,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
       ) : (
         <Redirect
           to={{
-            pathname: "/login",
+            pathname: "/signin",
             state: { from: props.location }
           }}
         />
@@ -43,6 +44,7 @@ const App = () => (
         <Route path="/signup" component={Signup} />
         <Route path="/resetpassword" component={Resetpassword} />
         <PrivateRoute path="/dashboard" component={Dashboard} />
+        <Route path='/*' component={Filenotfound} />
       </Switch>
     </div>
   </Router>
