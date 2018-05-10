@@ -28,7 +28,7 @@ class Signin extends Component {
 
   }
   handleSubmit(){
-    const url = 'http://localhost:8080/users/signin';
+    const url = '/users/signin';
     fetch(url, {
       method: 'POST',
       headers: {

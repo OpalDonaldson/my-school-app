@@ -91,7 +91,7 @@ class Signup extends Component {
     data.append('avatar', this.state.avatar);
 
     console.log(data);
-    const url = 'http://localhost:8080/users/signup';
+    const url = 'cl/users/signup';
     fetch(url, {
       method: 'POST',
       body: data

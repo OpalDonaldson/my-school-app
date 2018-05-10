@@ -23,5 +23,8 @@
     "passport-http": "*",
     "passport-local": "*",
     "sequelize": "^4.37.6"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1"
   }
 }
