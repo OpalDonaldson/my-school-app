@@ -40,8 +40,20 @@ const App = () => (
     <div>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/signin" component={Signin} />
-        <Route path="/signup" component={Signup} />
+        <Route path="/signin" render={ () =>(
+          checkAuth() ? (
+            <Redirect to="/dashboard" />
+          ) : (
+            <Signin/>
+          )
+        )} />
+        <Route path="/signup" render={ () =>(
+          checkAuth() ? (
+            <Redirect to="/dashboard" />
+          ) : (
+            <Signup />
+          )
+        )} />
         <Route path="/resetpassword" component={Resetpassword} />
         <PrivateRoute path="/dashboard" component={Dashboard} />
         <Route path='/*' component={Filenotfound} />

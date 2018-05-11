@@ -28,6 +28,7 @@ class Signin extends Component {
 
   }
   handleSubmit(){
+    
     const url = '/users/signin';
     fetch(url, {
       method: 'POST',
@@ -43,6 +44,7 @@ class Signin extends Component {
       console.log('Request failed', error);
     });
   }
+  
   render(){
     return(
       <main>

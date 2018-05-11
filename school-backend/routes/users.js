@@ -26,15 +26,17 @@ let token;
 users.use(cors());
 
 users.post('/signup', multer(multerConfig).single('avatar'), (req, res)=>{
+
   const userInfo = jsonParser(req.body.userInfo);
   userInfo.avatar = req.file;
   const today = new Date();
   userInfo.created = today.toLocaleString();
+  //userInfo.password = bcrypt.hashSync(userInfo.password, saltRounds)
 
   const adminUser = new User(userInfo);
   adminUser.save((err)=>{
     if(err){
-      console.log(err[BulkWriteError])
+      console.log(err)
     }else{
       console.log(userInfo.schoolname+ ' was added Successfully!');
     }    
@@ -43,8 +45,11 @@ users.post('/signup', multer(multerConfig).single('avatar'), (req, res)=>{
 });
 
 users.post("/signin", (req, res)=>{
+ 
   console.log(req.body);
-  let query = User.findOne({ email: req.body.email })
+  let query = User.findOne({ email: req.body.email });
+  
+  res.jsonp(req.body);
 });
 
 function jsonParser(toBeParsed){
