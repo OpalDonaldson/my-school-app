@@ -84,14 +84,14 @@ class Signup extends Component {
       });
     }
   }
-  handleSubmit(){
+  handleSubmit(e){
     let data = new FormData();
     let userData = JSON.stringify(this.state);
     data.append("userInfo", userData);
     data.append('avatar', this.state.avatar);
 
     console.log(data);
-    const url = 'cl/users/signup';
+    const url = '/users/signup';
     fetch(url, {
       method: 'POST',
       body: data
@@ -102,6 +102,7 @@ class Signup extends Component {
     .then(error => {
       console.log('Request failed', error);
     });
+    e.prevemtDefault();
   }
   render(){
     return(
