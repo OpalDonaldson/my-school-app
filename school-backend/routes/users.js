@@ -1,10 +1,11 @@
 const express = require('express');
 const users = express.Router();
 const User = require('../database/mongodatabase.js');
+const passport = require('../authmiddleware/auth.js');
+const jwt = require('jsonwebtoken');
 const cors = require('cors');
 
 const bcrypt = require('bcrypt');
-
 const multer = require("multer");
 const storage = multer.memoryStorage();
 const multerConfig = {
@@ -22,8 +23,8 @@ const multerConfig = {
 };
 
 const saltRounds = 10;
-let token;
 users.use(cors());
+
 // ::::: SIGNUP ::::: //
 
 users.post('/signup', multer(multerConfig).single('avatar'), (req, res)=>{
@@ -38,7 +39,7 @@ users.post('/signup', multer(multerConfig).single('avatar'), (req, res)=>{
   adminUser.save((err)=>{
     if(err){
       console.log(err.message)
-      res.jsonp({ "error" : err.message })
+      res.status(403).jsonp({ "error" : err.message })
     }else if(!err){
       console.log(userInfo.schoolname+ ' was added Successfully!');
       res.send("Request Sent")
@@ -49,19 +50,22 @@ users.post('/signup', multer(multerConfig).single('avatar'), (req, res)=>{
 
 //  :::::: SIGNIN :::::: //
 
-
-users.post("/signin", (req, res)=>{
- 
-  console.log(req.body);
-  let query = User.findOne({ email: req.body.email });
-  
-  res.jsonp(req.body);
-  
+users.post("/signin", passport.authenticate('local'), (req, res)=>{
+  User.findOne({ email: req.body.email }, function (err, user) {
+    if(err){ 
+      console.log(err);
+    }
+    if(user){ 
+      let tokenSigned =  jwt.sign({id: user._id}, "4mm0n1qu3!",{ expiresIn: 86400});
+      return res.status(200).json({ token: tokenSigned }); 
+     }    
+  });
+   
 });
-
 
 function encryptPassword(password){
   const hash = bcrypt.hashSync(password, saltRounds);
   return hash;
 }
+
 module.exports = users;

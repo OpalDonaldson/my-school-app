@@ -37,9 +37,10 @@ class Signin extends Component {
       },
       body: JSON.stringify(this.state)
     })
-    .then((data) =>{
-      console.log(data)
-    })
+    .then((data) => data.json())
+    .then(((data)=>{
+      localStorage.setItem("token", data.token);
+    }))
     .then(error => {
       console.log('Request failed', error);
     });

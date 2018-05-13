@@ -97,12 +97,12 @@ class Signup extends Component {
       body: data
     })
     .then((data) =>{
-      console.log(data)
+      console.log(data.body)
     })
     .then(error => {
       console.log('Request failed', error);
     });
-    e.prevemtDefault();
+    e.preventDefault();
   }
   render(){
     return(

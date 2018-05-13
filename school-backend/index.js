@@ -9,15 +9,15 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cors());
-
-app.use(passport.initialize());
-app.use(passport.session());
-
 app.use(express.json());
 
 app.use('/users/', express.static(__dirname + '/public'));
-const Dashboard = require('./routes/dashboard.js');
+
 const Users = require('./routes/users.js')
+const Dashboard = require('./routes/dashboard.js');
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/users',Users)
 app.use('/dashboard', Dashboard);
