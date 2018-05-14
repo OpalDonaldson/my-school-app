@@ -90,19 +90,18 @@ class Signup extends Component {
     data.append("userInfo", userData);
     data.append('avatar', this.state.avatar);
 
-    console.log(data);
     const url = '/users/signup';
     fetch(url, {
       method: 'POST',
       body: data
     })
-    .then((data) =>{
-      console.log(data.body)
-    })
+    .then((data) =>
+      data.body)
     .then(error => {
       console.log('Request failed', error);
     });
     e.preventDefault();
+    window.location = '/signin';
   }
   render(){
     return(

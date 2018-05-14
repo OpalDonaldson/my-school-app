@@ -27,7 +27,8 @@ class Signin extends Component {
     }
 
   }
-  handleSubmit(){
+  
+  handleSubmit(e){
     
     const url = '/users/signin';
     fetch(url, {
@@ -36,14 +37,24 @@ class Signin extends Component {
         'Content-type': 'application/json; charset=UTF-8'
       },
       body: JSON.stringify(this.state)
+    }).then((response) =>{ 
+      if(response.status === 200){
+        return response.json();
+      }else{
+        return response;
+      }
     })
-    .then((data) => data.json())
-    .then(((data)=>{
-      localStorage.setItem("token", data.token);
-    }))
+    .then((data)=>{
+      if(data.token){
+        localStorage.setItem("token", data.token); 
+        window.location.reload(true);
+      }
+      return data;
+    })
     .then(error => {
       console.log('Request failed', error);
     });
+    e.preventDefault();
   }
   
   render(){
@@ -77,6 +88,6 @@ class Signin extends Component {
     )
   }
 }
-/*<a>Forgot Password</a>
-<a href="/signup">Sign up</a>*/
+
+
 export default Signin;

@@ -56,7 +56,7 @@ users.post("/signin", passport.authenticate('local'), (req, res)=>{
       console.log(err);
     }
     if(user){ 
-      let tokenSigned =  jwt.sign({id: user._id}, "4mm0n1qu3!",{ expiresIn: 86400});
+      let tokenSigned =  jwt.sign({id: user._id}, "4mm0n1qu3!", { expiresIn: 86400});
       return res.status(200).json({ token: tokenSigned }); 
      }    
   });
