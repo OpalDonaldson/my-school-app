@@ -47,7 +47,7 @@ class Signin extends Component {
     .then((data)=>{
       if(data.token){
         localStorage.setItem("token", data.token); 
-        window.location.reload(true);
+        window.location = '/dashboard';
       }
       return data;
     })

@@ -2,6 +2,7 @@ const express = require('express');
 const users = express.Router();
 const User = require('../database/mongodatabase.js');
 const passport = require('../authmiddleware/auth.js');
+const passportJwt = require('../authmiddleware/authTwo.js');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 
@@ -50,12 +51,22 @@ users.post('/signup', multer(multerConfig).single('avatar'), (req, res)=>{
 
 //  :::::: SIGNIN :::::: //
 
-users.post("/signin", passport.authenticate('local'), (req, res)=>{
+users.post("/signin", passport.authenticate('local', { session: false }), (req, res)=>{
   User.findOne({ email: req.body.email }, function (err, user) {
     if(err){ 
       console.log(err);
     }
     if(user){ 
+      const payload = { "alg": "HS256", "typ": "JWT" };
+      const secret = {"passKey": "4mm0n1qu3!"};
+      const options = { 
+        "algorithm": "HS256", 
+        "sub": user._id, 
+        "email": user.email, 
+        "expiresIn": "8h",
+        "user": user.userType
+       };
+      
       let tokenSigned =  jwt.sign({id: user._id}, "4mm0n1qu3!", { expiresIn: 86400});
       return res.status(200).json({ token: tokenSigned }); 
      }    
