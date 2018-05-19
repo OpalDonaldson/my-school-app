@@ -3,12 +3,13 @@ import Navigator from '../partials/Navigator';
 
 class Dashboard extends Component {
   
+  
   componentDidMount(){
     let timer = setInterval(()=>{
       localStorage.removeItem("token");
       clearInterval(timer);
       window.location.reload(true);
-    }, 5000);   
+    }, 500000);   
   }
   
   render(){

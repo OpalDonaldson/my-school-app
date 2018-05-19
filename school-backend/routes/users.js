@@ -2,7 +2,6 @@ const express = require('express');
 const users = express.Router();
 const User = require('../database/mongodatabase.js');
 const passport = require('../authmiddleware/auth.js');
-const passportJwt = require('../authmiddleware/authTwo.js');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 
@@ -67,7 +66,7 @@ users.post("/signin", passport.authenticate('local', { session: false }), (req, 
         "user": user.userType
        };
       
-      let tokenSigned =  jwt.sign({id: user._id}, "4mm0n1qu3!", { expiresIn: 86400});
+      let tokenSigned =  jwt.sign(payload, secret['passKey'], { expiresIn: 86400});
       return res.status(200).json({ token: tokenSigned }); 
      }    
   });
