@@ -13,6 +13,8 @@ app.use(express.json());
 
 app.use('/users/', express.static(__dirname + '/public'));
 
+const passportjwt = require('./authmiddleware/authTwo.js');
+
 const Users = require('./routes/users.js')
 const Dashboard = require('./routes/dashboard.js');
 
@@ -20,7 +22,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/users',Users)
-app.use('/dashboard', Dashboard);
+app.use('/dashboard', passport.authenticate('jwt', { session: false }), Dashboard);
 
 
 app.listen(8080, "127.0.0.1", ()=>{

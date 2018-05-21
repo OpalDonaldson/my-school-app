@@ -4,35 +4,31 @@ const db = require('../database/mongodatabase');
 const passport = require('../authmiddleware/authTwo.js');
 const cors = require('cors');
 
-/*
-dashboard.get("/", (req, res)=>{
-  res.send("Success");
-});*/
+// ::::: ALL GET REQUESTS ::::: //
 
-dashboard.get('/', passport.authenticate('jwt', { session: false }), (req, res)=>{
-  console.log("req");
-  console.log("res");
-  res.send({ "name": "Ronique" });
+dashboard.get('/', (req, res)=>{
+  res.status(200)
+  res.send({ page: "Home Page" });
 });
 
-dashboard.get('/overview', passport.authenticate('jwt', { session: false }), (req, res)=>{
+dashboard.get('/overview', (req, res)=>{
   console.log("Overview Success");
-  res.send({ "name": "Ronique" });
+  res.send({ "page": "Overview" });
 });
 
-dashboard.get('/datadetails', passport.authenticate('jwt', { session: false }), (req, res)=>{
+dashboard.get('/datadetails', (req, res)=>{
   console.log("Datadetails Success");
-  res.send({ "name": "Ronique" });
+  res.send({ "page": "Date & Details" });
 });
 
-dashboard.get('/allactivities', passport.authenticate('jwt', { session: false }), (req, res)=>{
+dashboard.get('/allactivities', (req, res)=>{
   console.log("Allactivities Success");
-  res.send({ "name": "Ronique" });
+  res.send({ "page": "All Activities" });
 });
 
-dashboard.get('/resourcesarea', passport.authenticate('jwt', { session: false }), (req, res)=>{
+dashboard.get('/resourcesarea', (req, res)=>{
   console.log("Resourcesarea Successful");
-  res.send({ "name": "Ronique" });
+  res.send({ "page": "Resources Area" });
 });
 
 module.exports = dashboard;

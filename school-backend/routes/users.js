@@ -56,13 +56,11 @@ users.post("/signin", passport.authenticate('local', { session: false }), (req, 
       console.log(err);
     }
     if(user){ 
-      const payload = { "alg": "HS256", "typ": "JWT" };
+      const payload = { "alg": "HS256", "typ": "JWT", "sub": user._id,};
       const secret = {"passKey": "4mm0n1qu3!"};
       const options = { 
-        "algorithm": "HS256", 
-        "sub": user._id, 
-        "email": user.email, 
-        "expiresIn": "8h",
+        "algorithm": "HS256",
+        "expiresIn": "1m",
         "user": user.userType
        };
       
