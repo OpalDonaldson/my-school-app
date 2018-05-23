@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Navigator from "../partials/Navigator";
 
-class Forgetpassword extends Component {
+class ResetPassword extends Component {
 
   render(){
     return(
@@ -12,4 +12,4 @@ class Forgetpassword extends Component {
   }
 }
 
-export default Forgetpassword;
+export default ResetPassword;

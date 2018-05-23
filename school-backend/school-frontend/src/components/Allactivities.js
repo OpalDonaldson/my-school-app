@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import Navigator from '../partials/Navigator';
 
-class FileNotFound extends Component {
+class AllActivities extends Component {
   render(){
     return(
-        <div id='filenotfound'>
+        <div id='allactivities'>
             <Navigator header="File Not Found!" />
         </div>
     )
   }
 }
 
-export default FileNotFound;
+export default AllActivities;

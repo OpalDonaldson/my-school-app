@@ -8,6 +8,7 @@ const cors = require('cors');
 const bcrypt = require('bcrypt');
 const multer = require("multer");
 const storage = multer.memoryStorage();
+require('dotenv').config();
 const multerConfig = {
   storage: multer.diskStorage({
     destination: (req, file, next)=>{
@@ -56,15 +57,8 @@ users.post("/signin", passport.authenticate('local', { session: false }), (req, 
       console.log(err);
     }
     if(user){ 
-      const payload = { "alg": "HS256", "typ": "JWT", "sub": user._id,};
-      const secret = {"passKey": "4mm0n1qu3!"};
-      const options = { 
-        "algorithm": "HS256",
-        "expiresIn": "1m",
-        "user": user.userType
-       };
-      
-      let tokenSigned =  jwt.sign(payload, secret['passKey'], { expiresIn: 86400});
+      const payload = { "alg": "HS256", "typ": "JWT", "sub": user._id, "user": user.userType };
+      let tokenSigned =  jwt.sign(payload, process.env.SECRET, { expiresIn: '1m' });
       return res.status(200).json({ token: tokenSigned }); 
      }    
   });

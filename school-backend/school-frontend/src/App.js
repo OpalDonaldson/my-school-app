@@ -1,20 +1,22 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Home from './components/Home';
-import Signin from './components/Signin';
-import Signup from './components/Signup';
-import Resetpassword from './components/Resetpassword';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
+import ResetPassword from './components/ResetPassword';
 import Dashboard from './components/Dashboard';
-import Filenotfound from './components/Filenotfound';
+import FileNotFound from './components/FileNotFound';
+const jwt = require('jsonwebtoken');
 
 const checkAuth = () =>{
   let token = localStorage.getItem('token');
-  if(token){
-    return true;
-  }
-  else{
-    return false;
-  }
+  return jwt.verify(token, '4mm0n1qu3!', (err, data)=>{
+    if(err){
+     return false; 
+    }else if(data){
+      return true
+    }
+  });  
 }
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -44,19 +46,19 @@ const App = () => (
           checkAuth() ? (
             <Redirect to="/dashboard" />
           ) : (
-            <Signin/>
+            <SignIn/>
           )
         )} />
         <Route path="/signup" render={ () =>(
           checkAuth() ? (
             <Redirect to="/dashboard" />
           ) : (
-            <Signup />
+            <SignUp />
           )
         )} />
-        <Route path="/resetpassword" component={Resetpassword} />
+        <Route path="/resetpassword" component={ResetPassword} />
         <PrivateRoute path="/dashboard" component={Dashboard} />
-        <Route path='/*' component={Filenotfound} />
+        <Route path='/*' component={FileNotFound} />
       </Switch>
     </div>
   </Router>

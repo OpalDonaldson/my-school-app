@@ -3,10 +3,9 @@ import Navigator from '../partials/Navigator';
 import Footer from '../partials/Footer';
 import  "../css/signin.css";
 
-class Signin extends Component {
+class SignIn extends Component {
   constructor(props){
     super(props);
-
     this.state ={
       email: "",
       password: ""
@@ -14,6 +13,7 @@ class Signin extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
+ 
   handleChange(event){
     if(event.target.id === "email"){
       this.setState({
@@ -90,4 +90,4 @@ class Signin extends Component {
 }
 
 
-export default Signin;
+export default SignIn;

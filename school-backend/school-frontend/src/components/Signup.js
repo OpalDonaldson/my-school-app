@@ -3,7 +3,7 @@ import Navigator from "../partials/Navigator";
 import Footer from "../partials/Footer";
 import "../css/signup.css";
 
-class Signup extends Component {
+class SignUp extends Component {
   constructor(props){
     super(props);
 
@@ -152,4 +152,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default SignUp;
