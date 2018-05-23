@@ -7,28 +7,23 @@ const cors = require('cors');
 // ::::: ALL GET REQUESTS ::::: //
 
 dashboard.get('/', (req, res)=>{
-  res.status(200)
-  res.send({ page: "Home Page" });
+  res.status(200).send({ page: "Home Page" });
 });
 
 dashboard.get('/overview', (req, res)=>{
-  console.log("Overview Success");
-  res.send({ "page": "Overview" });
+  res.status(200).send({ "page": "Overview" });
 });
 
 dashboard.get('/datadetails', (req, res)=>{
-  console.log("Datadetails Success");
-  res.send({ "page": "Date & Details" });
+  res.status(200).send({ "page": "Date & Details" });
 });
 
 dashboard.get('/allactivities', (req, res)=>{
-  console.log("Allactivities Success");
-  res.send({ "page": "All Activities" });
+  res.status(200).send({ "page": "All Activities" });
 });
 
 dashboard.get('/resourcesarea', (req, res)=>{
-  console.log("Resourcesarea Successful");
-  res.send({ "page": "Resources Area" });
+  res.status(200).send({ "page": "Resources Area" });
 });
 
 module.exports = dashboard;
