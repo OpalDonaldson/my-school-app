@@ -15,6 +15,7 @@ class SignIn extends Component {
   }
  
   handleChange(event){
+    
     if(event.target.id === "email"){
       this.setState({
         email : event.target.value

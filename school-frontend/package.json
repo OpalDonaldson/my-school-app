@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "jsonwebtoken": "^8.2.1",
     "nodemon": "^1.17.3",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",

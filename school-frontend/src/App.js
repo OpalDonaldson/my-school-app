@@ -6,17 +6,15 @@ import SignUp from './components/SignUp';
 import ResetPassword from './components/ResetPassword';
 import Dashboard from './components/Dashboard';
 import FileNotFound from './components/FileNotFound';
-const jwt = require('jsonwebtoken');
+
 
 const checkAuth = () =>{
   let token = localStorage.getItem('token');
-  return jwt.verify(token, '4mm0n1qu3!', (err, data)=>{
-    if(err){
-     return false; 
-    }else if(data){
-      return true
-    }
-  });  
+  if(token){
+    return true; 
+  }else {
+    return false;
+  }
 }
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
