@@ -5,6 +5,7 @@ import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import ResetPassword from './components/ResetPassword';
 import Dashboard from './components/Dashboard';
+import Overview from './components/Overview';
 import FileNotFound from './components/FileNotFound';
 
 
@@ -55,7 +56,8 @@ const App = () => (
           )
         )} />
         <Route path="/resetpassword" component={ResetPassword} />
-        <PrivateRoute path="/dashboard" component={Dashboard} />
+        <PrivateRoute exact path="/dashboard" component={Dashboard} />
+        <PrivateRoute path="/dashboard/overview" component={Overview} />
         <Route path='/*' component={FileNotFound} />
       </Switch>
     </div>

@@ -61,13 +61,7 @@ users.post("/signin", passport.authenticate('local', { session: false }), (req, 
       let tokenSigned =  jwt.sign(payload, process.env.SECRET, { expiresIn: '1m' });
       return res.status(200).json({ token: tokenSigned }); 
      }    
-  });
-   
+  });   
 });
-
-function encryptPassword(password){
-  const hash = bcrypt.hashSync(password, saltRounds);
-  return hash;
-}
 
 module.exports = users;

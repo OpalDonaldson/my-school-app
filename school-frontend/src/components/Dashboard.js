@@ -30,7 +30,7 @@ class Dashboard extends Component {
       localStorage.removeItem("token");
       clearInterval(timer);
       window.location.reload(true);
-    }, 9000);   
+    }, 12000);   
   }
   
   render(){
