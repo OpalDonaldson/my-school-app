@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Navigator from '../partials/Navigator';
 
-class Dashboard extends Component {
- 
+class DataAndDetails extends Component {
+  
   componentDidMount(){
     const token = localStorage.getItem("token");
     if(token){
       (function getData(){
-        const url = 'http://localhost:8080/dashboard';    
+        const url = 'http://localhost:8080/dashboard/datadetails';    
         fetch(url, {
           method: "GET",
           credentials: 'same-origin',
@@ -24,18 +24,22 @@ class Dashboard extends Component {
     }
     else{
       window.location = "/signin";
-    }     
-  }
-  
-  render(){
-    return(
-      <main>
-        <Navigator header='Dashboard'/>
-        <h1>Protected Dashboard</h1>
-        <p>Congratulations you've logged in!</p>
-      </main>
-    )
+    }
+    
+    let timer = setInterval(()=>{
+      localStorage.removeItem("token");
+      clearInterval(timer);
+      window.location.reload(true);
+    }, 59000);       
   }
 
+  render(){
+    return(
+        <div id='dataAndDetails'>
+            <Navigator header="Data And Details" />
+        </div>
+    )
+  }
 }
-export default Dashboard;
+
+export default DataAndDetails;

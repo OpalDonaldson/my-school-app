@@ -6,6 +6,9 @@ import SignUp from './components/SignUp';
 import ResetPassword from './components/ResetPassword';
 import Dashboard from './components/Dashboard';
 import Overview from './components/Overview';
+import DataDetails from './components/Data&details';
+import AllActivities from './components/AllActivities';
+import ResourceArea from './components/ResourceArea';
 import FileNotFound from './components/FileNotFound';
 
 
@@ -41,7 +44,7 @@ const App = () => (
     <div>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/signin" render={ () =>(
+        <Route path="/signin" render={ (props) =>(
           checkAuth() ? (
             <Redirect to="/dashboard" />
           ) : (
@@ -57,8 +60,11 @@ const App = () => (
         )} />
         <Route path="/resetpassword" component={ResetPassword} />
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
-        <PrivateRoute path="/dashboard/overview" component={Overview} />
-        <Route path='/*' component={FileNotFound} />
+        <PrivateRoute exact path="/dashboard/overview" component={Overview} />
+        <PrivateRoute exact path="/dashboard/datadetails" component={DataDetails} />
+        <PrivateRoute exact path="/dashboard/allactivities" component={AllActivities} />
+        <PrivateRoute exact path="/dashboard/resourcearea" component={ResourceArea} />
+        <Route component={FileNotFound} />
       </Switch>
     </div>
   </Router>

@@ -6,7 +6,6 @@ import Footer from '../partials/Footer';
 import "../css/home.css";
 
 class Home extends Component {
-
   render(){
     return(
       <main>

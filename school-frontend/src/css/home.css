@@ -42,6 +42,21 @@ body{
   list-style: none;
   color: #fff;
 }
+#main-nav-bar #log-info button{
+  height: 100%;
+  width: 50px;
+  background-color: black;
+  border-style: none;
+  color: white;
+  margin: none;
+}
+#main-nav-bar #log-info button:hover{
+  background-color: grey;
+}
+#main-nav-bar #log-info i{
+  height: 80px;
+  width: 80px;
+}
 #main-nav-bar ul a:hover{
   text-decoration: none;
   background-color: #fff;
@@ -141,7 +156,8 @@ article h2{
   font-family: "IBM Plex Mono";
 }
 input:focus,
-textarea:focus{
+textarea:focus,
+button:focus{
   outline: none;
 }
 #myMessageForm textarea{
