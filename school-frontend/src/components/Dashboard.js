@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Navigator from '../partials/Navigator';
+import Dashboardnavbar from '../partials/Dashboardnavbar';
+import Footer from "../partials/Footer";
 
+import "../css/dashboard.css"
 class Dashboard extends Component {
  
   componentDidMount(){
@@ -29,10 +32,13 @@ class Dashboard extends Component {
   
   render(){
     return(
-      <main>
+      <main id='dashboard'>
         <Navigator header='Dashboard'/>
-        <h1>Protected Dashboard</h1>
-        <p>Congratulations you've logged in!</p>
+        <section id='dashboard-overview-nav'>
+          <Dashboardnavbar />
+        </section>
+        <Footer footer="School App" />
+        
       </main>
     )
   }

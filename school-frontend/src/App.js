@@ -5,7 +5,6 @@ import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import ResetPassword from './components/ResetPassword';
 import Dashboard from './components/Dashboard';
-import Overview from './components/Overview';
 import DataDetails from './components/Data&details';
 import AllActivities from './components/AllActivities';
 import ResourceArea from './components/ResourceArea';
@@ -60,7 +59,6 @@ const App = () => (
         )} />
         <Route path="/resetpassword" component={ResetPassword} />
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
-        <PrivateRoute exact path="/dashboard/overview" component={Overview} />
         <PrivateRoute exact path="/dashboard/datadetails" component={DataDetails} />
         <PrivateRoute exact path="/dashboard/allactivities" component={AllActivities} />
         <PrivateRoute exact path="/dashboard/resourcearea" component={ResourceArea} />

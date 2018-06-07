@@ -51,7 +51,7 @@ class Home extends Component {
             <MessageForm />
           </div>
         </article>
-        <Footer footer="APP NAME" />
+        <Footer footer="School App" />
       </main>
     )
   }

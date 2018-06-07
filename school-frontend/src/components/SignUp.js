@@ -146,7 +146,7 @@ class SignUp extends Component {
               <input id="submit" type="submit" value="Submit" />
           </form>
         </article>
-        <Footer footer="APP NAME" />
+        <Footer footer="School App" />
       </main>
     )
   }

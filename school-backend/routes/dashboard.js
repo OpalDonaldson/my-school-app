@@ -10,10 +10,6 @@ dashboard.get('/', (req, res)=>{
   res.status(200).send({ page: "Home Page" });
 });
 
-dashboard.get('/overview', (req, res)=>{
-  res.status(200).send({ "page": "Overview" });
-});
-
 dashboard.get('/datadetails', (req, res)=>{
   res.status(200).send({ "page": "Date & Details" });
 });

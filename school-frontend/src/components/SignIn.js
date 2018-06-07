@@ -96,7 +96,7 @@ class SignIn extends Component {
             </form>
           </div>
         </article>
-        <Footer footer="APP NAME" />
+        <Footer footer="School App" />
       </main>
     )
   }
